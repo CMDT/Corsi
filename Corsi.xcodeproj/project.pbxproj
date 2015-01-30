@@ -44,6 +44,9 @@
 		E12DE08D1A03B09100172B36 /* BEEPJAZZ.caf in Resources */ = {isa = PBXBuildFile; fileRef = E12DE0871A03B09100172B36 /* BEEPJAZZ.caf */; };
 		E12DE08E1A03B09100172B36 /* BEEPPURE.caf in Resources */ = {isa = PBXBuildFile; fileRef = E12DE0881A03B09100172B36 /* BEEPPURE.caf */; };
 		E12DE08F1A03B09100172B36 /* KLICK.caf in Resources */ = {isa = PBXBuildFile; fileRef = E12DE0891A03B09100172B36 /* KLICK.caf */; };
+		E135DBAA1A77FDE7009B5691 /* mainfest.plist in Resources */ = {isa = PBXBuildFile; fileRef = E135DBA91A77FDE7009B5691 /* mainfest.plist */; };
+		E135DBAC1A785CF4009B5691 /* corsi512x512.png in Resources */ = {isa = PBXBuildFile; fileRef = E135DBAB1A785CF4009B5691 /* corsi512x512.png */; };
+		E135DBAE1A785D09009B5691 /* corsi57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = E135DBAD1A785D09009B5691 /* corsi57x57.png */; };
 		E168CF841A1F3D5A00BA650E /* redblocks800.png in Resources */ = {isa = PBXBuildFile; fileRef = E168CF831A1F3D5A00BA650E /* redblocks800.png */; };
 		E19EBAA51A2741EE000ED2F5 /* yellow25.png in Resources */ = {isa = PBXBuildFile; fileRef = E19EBA941A2741EE000ED2F5 /* yellow25.png */; };
 		E19EBAA61A2741EE000ED2F5 /* white25.png in Resources */ = {isa = PBXBuildFile; fileRef = E19EBA951A2741EE000ED2F5 /* white25.png */; };
@@ -143,6 +146,10 @@
 		E12DE0871A03B09100172B36 /* BEEPJAZZ.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BEEPJAZZ.caf; sourceTree = "<group>"; };
 		E12DE0881A03B09100172B36 /* BEEPPURE.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BEEPPURE.caf; sourceTree = "<group>"; };
 		E12DE0891A03B09100172B36 /* KLICK.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KLICK.caf; sourceTree = "<group>"; };
+		E135DBA91A77FDE7009B5691 /* mainfest.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mainfest.plist; sourceTree = "<group>"; };
+		E135DBAB1A785CF4009B5691 /* corsi512x512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = corsi512x512.png; sourceTree = "<group>"; };
+		E135DBAD1A785D09009B5691 /* corsi57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = corsi57x57.png; sourceTree = "<group>"; };
+		E135DBAF1A79AE11009B5691 /* Corsi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Corsi.entitlements; sourceTree = "<group>"; };
 		E168CF831A1F3D5A00BA650E /* redblocks800.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redblocks800.png; sourceTree = "<group>"; };
 		E19EBA941A2741EE000ED2F5 /* yellow25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow25.png; sourceTree = "<group>"; };
 		E19EBA951A2741EE000ED2F5 /* white25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white25.png; sourceTree = "<group>"; };
@@ -218,6 +225,7 @@
 		E10D015C19B6024F00D9E5F8 = {
 			isa = PBXGroup;
 			children = (
+				E135DBA91A77FDE7009B5691 /* mainfest.plist */,
 				E10D016E19B6024F00D9E5F8 /* Corsi */,
 				E10D019019B6024F00D9E5F8 /* CorsiTests */,
 				E10D016719B6024F00D9E5F8 /* Frameworks */,
@@ -249,6 +257,7 @@
 		E10D016E19B6024F00D9E5F8 /* Corsi */ = {
 			isa = PBXGroup;
 			children = (
+				E135DBAF1A79AE11009B5691 /* Corsi.entitlements */,
 				E10D017A19B6024F00D9E5F8 /* Main_iPhone.storyboard */,
 				E1DAD7A619B8A31700600608 /* mySingleton.h */,
 				E1DAD7A719B8A31700600608 /* mySingleton.m */,
@@ -288,8 +297,10 @@
 				E19EBA981A2741EE000ED2F5 /* magenta25.png */,
 				E19EBA991A2741EE000ED2F5 /* gray25.png */,
 				E19EBA9A1A2741EE000ED2F5 /* green25.png */,
+				E135DBAD1A785D09009B5691 /* corsi57x57.png */,
 				E19EBA9B1A2741EE000ED2F5 /* cyan25.png */,
 				E19EBA9C1A2741EE000ED2F5 /* blue25.png */,
+				E135DBAB1A785CF4009B5691 /* corsi512x512.png */,
 				E19EBA9D1A2741EE000ED2F5 /* black25.png */,
 				E19EBA9E1A2741EE000ED2F5 /* brown25.png */,
 				E19EBA9F1A2741EE000ED2F5 /* darkgray25.png */,
@@ -408,7 +419,12 @@
 				ORGANIZATIONNAME = "Manchester Metropolitan University - ESS - essmobile";
 				TargetAttributes = {
 					E10D016419B6024F00D9E5F8 = {
-						DevelopmentTeam = G8Q878PY9S;
+						DevelopmentTeam = 4SPW49WK35;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 					E10D018819B6024F00D9E5F8 = {
 						TestTargetID = E10D016419B6024F00D9E5F8;
@@ -442,6 +458,7 @@
 				E19EBAAA1A2741EE000ED2F5 /* gray25.png in Resources */,
 				91E2633D19D8914B005B2643 /* check72gray.png in Resources */,
 				9110816D1A2004600030B89E /* information.png in Resources */,
+				E135DBAC1A785CF4009B5691 /* corsi512x512.png in Resources */,
 				911081551A1FD5580030B89E /* finished.png in Resources */,
 				9110816E1A2004600030B89E /* results.png in Resources */,
 				E19EBAAF1A2741EE000ED2F5 /* brown25.png in Resources */,
@@ -464,7 +481,9 @@
 				E19EBAB31A2741EE000ED2F5 /* darkgray72.png in Resources */,
 				E12DE08A1A03B09100172B36 /* AMFMBEEP.caf in Resources */,
 				E1B29ECA19B7532E005B9C84 /* orange72.png in Resources */,
+				E135DBAE1A785D09009B5691 /* corsi57x57.png in Resources */,
 				E10D018419B6024F00D9E5F8 /* Images.xcassets in Resources */,
+				E135DBAA1A77FDE7009B5691 /* mainfest.plist in Resources */,
 				E12DE08D1A03B09100172B36 /* BEEPJAZZ.caf in Resources */,
 				E1DAD7A019B87F8E00600608 /* email.png in Resources */,
 				911081541A1FD5580030B89E /* cancelled.png in Resources */,
@@ -590,7 +609,9 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_RESOURCE_RULES_PATH[sdk=*]" = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -607,9 +628,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Debug;
 		};
@@ -629,7 +652,9 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_RESOURCE_RULES_PATH[sdk=*]" = "";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -640,8 +665,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				ONLY_ACTIVE_ARCH = NO;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -652,12 +679,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Corsi/Corsi-Prefix.pch";
 				INFOPLIST_FILE = "Corsi/Corsi-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -669,12 +698,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Corsi/Corsi-Prefix.pch";
 				INFOPLIST_FILE = "Corsi/Corsi-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
