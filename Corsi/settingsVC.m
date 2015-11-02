@@ -5,7 +5,7 @@
 //  Created by Jon Howell on 04/09/2014.
 //  Copyright (c) 2014 Manchester Metropolitan University - ESS - essmobile. All rights reserved.
 //
-
+//  Minor updates and re-build for distro 2/11/15 jah
 // NB. *** on new version, set detials in defaults function
 
 #import "settingsVC.h"
@@ -248,8 +248,8 @@
 //*************************************************************
 //version, set anyway *****************************************
 //*************************************************************
-        version0 =  @"v1.0.0.28.11.14";        // version   *** keep short
-        version1 =  @"MMU (c) 2014";           // copyright *** limited line space
+        version0 =  @"v1.1.0.02.11.15";        // version   *** keep short
+        version1 =  @"MMU (c) 2015";           // copyright *** limited line space
         version2 =  @"j.a.howell@mmu.ac.uk";   // author    *** to display on device
         version3 =  @"http://www.mmu.ac.uk";   // web site  *** settings screen
 //*************************************************************
@@ -639,13 +639,61 @@
         [defaults setObject:[NSString stringWithFormat:@"%@", singleton.email] forKey:kEmail];
         [defaults setObject:[NSString stringWithFormat:@"%@", singleton.testerName] forKey:kTester];
         [defaults synchronize];//make sure all are updated
+    
+    /*
+    // Alerts changed in ios9
     UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"CORSI TEST SETTINGS"
                                                      message:@"\nThe settings were \n\n'SAVED' \n\nfor the tests.\n\nYou can recall these with \n'Load' on this screen."
                                                     delegate:self
                                            cancelButtonTitle:nil //@"Cancel"
                                            otherButtonTitles:@"OK", nil];
     alert.alertViewStyle = UIAlertViewStyleDefault;
-    [alert show];
+    
+    [alert show]; 
+    */
+    UIAlertController * alert=   [UIAlertController
+                                  alertControllerWithTitle:@"CORSI TEST SETTINGS"
+                                  message:@"\nThe settings were \n\n'SAVED' \n\nfor the tests.\n\nYou can recall these with \n'Load' on this screen."
+                                  preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction * cancelButtonTitle = [UIAlertAction
+                                actionWithTitle:@"OK, continue"
+                                style:UIAlertActionStyleDefault
+                                handler:^(UIAlertAction * action)
+                                {
+                                //Handel your yes please button action here
+                                [alert dismissViewControllerAnimated:YES completion:nil];
+                                
+                                }];
+    
+    /*
+     //yes/no type messages in alert
+     UIAlertAction * yesButton = [UIAlertAction
+                                actionWithTitle:@"Yes, please"
+                                style:UIAlertActionStyleDefault
+                                handler:^(UIAlertAction * action)
+                                {
+                                //Handel your yes please button action here
+                                [alert dismissViewControllerAnimated:YES completion:nil];
+                                
+                                }];
+    */
+    /* 
+     //for extra button if wanted
+     UIAlertAction * noButton = [UIAlertAction
+                               actionWithTitle:@"No, thanks"
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction * action)
+                               {
+                               [alert dismissViewControllerAnimated:YES completion:nil];
+                               
+                               }]; */
+    [alert addAction:cancelButtonTitle];
+    
+    //[alert addAction:yesButton];
+    //[alert addAction:noButton]; //for extra button if wanted
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 -(IBAction)loadSettings:(id)sender{
@@ -702,13 +750,36 @@
     [defaults synchronize];
     [self refreshView];
 
+    /*
     UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"CORSI TEST SETTINGS"
                                                      message:@"\nThe settings were \n\n'LOADED' \n\nfor the tests."
                                                     delegate:self
                                            cancelButtonTitle:nil //@"Cancel"
                                            otherButtonTitles:@"OK", nil];
     alert.alertViewStyle = UIAlertViewStyleDefault;
-    [alert show];
+    [alert show];*/
+
+
+UIAlertController * alert =  [UIAlertController
+                              alertControllerWithTitle:@"CORSI TEST SETTINGS"
+                              message:@"The settings were \n\n'LOADED' \n\nfor the tests."
+                              preferredStyle:UIAlertControllerStyleAlert];
+
+
+UIAlertAction * cancelButtonTitle = [UIAlertAction
+                                     actionWithTitle:@"OK, continue"
+                                     style:UIAlertActionStyleDefault
+                                     handler:^(UIAlertAction * action)
+                                     {
+                                     //Handle your yes please button action here
+                                     [alert dismissViewControllerAnimated:YES completion:nil];
+                                     
+                                     }];
+
+    [alert addAction:cancelButtonTitle];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+    
 }
 
 -(float)randomDegrees359

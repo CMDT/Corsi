@@ -4,6 +4,7 @@
 //
 //  Created by Jon Howell on 02/09/2014.
 //  Copyright (c) 2014 Manchester Metropolitan University - ESS - essmobile. All rights reserved.
+//  Minor updates and re-build for distro 2/11/15 jah
 //
 
 #import "AppDelegate.h"
@@ -32,6 +33,8 @@
                                                        delegate:self
                                               cancelButtonTitle:@"Continue"
                                               otherButtonTitles:nil];
+    
+    
 
     UILabel *txtField = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, 180, 230)];
     
@@ -42,7 +45,7 @@
     txtField.backgroundColor = [UIColor clearColor];
     txtField.textAlignment = NSTextAlignmentCenter;
     
-    txtField.text = @"To see details on how to \nuse this Application\n and adjust its settings, \nplease read the notes in \nthe 'Information' section.\n\nThis Application is NOT \nfor clinical use.";
+    txtField.text = @"To see details on how to \nuse this Application\n and adjust its settings, \nplease read the notes in \nthe 'Information' section.\n\nThis Application is NOT \nfor clinical use. v1.1";
 
     [alertView setValue:txtField forKeyPath:@"accessoryView"]; //for ios 7 and above
 

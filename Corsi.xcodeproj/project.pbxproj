@@ -79,7 +79,6 @@
 		E1B29ECD19B7532E005B9C84 /* yellow72.png in Resources */ = {isa = PBXBuildFile; fileRef = E1B29EC019B7532E005B9C84 /* yellow72.png */; };
 		E1B8888119B9CDC6006597C5 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1B8888019B9CDC6006597C5 /* MessageUI.framework */; };
 		E1B8888719B9E8BB006597C5 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E1B8888619B9E8BB006597C5 /* Settings.bundle */; };
-		E1DAD78019B8606B00600608 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E1DAD77519B85E7300600608 /* libz.dylib */; };
 		E1DAD7A019B87F8E00600608 /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DAD79819B87F8E00600608 /* email.png */; };
 		E1DAD7A119B87F8E00600608 /* email1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DAD79919B87F8E00600608 /* email1@2x.png */; };
 		E1DAD7A819B8A31700600608 /* mySingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = E1DAD7A719B8A31700600608 /* mySingleton.m */; };
@@ -182,7 +181,6 @@
 		E1B29EC019B7532E005B9C84 /* yellow72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow72.png; sourceTree = "<group>"; };
 		E1B8888019B9CDC6006597C5 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		E1B8888619B9E8BB006597C5 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		E1DAD77519B85E7300600608 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		E1DAD79819B87F8E00600608 /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
 		E1DAD79919B87F8E00600608 /* email1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "email1@2x.png"; sourceTree = "<group>"; };
 		E1DAD7A619B8A31700600608 /* mySingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mySingleton.h; sourceTree = "<group>"; };
@@ -203,7 +201,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1B8888119B9CDC6006597C5 /* MessageUI.framework in Frameworks */,
-				E1DAD78019B8606B00600608 /* libz.dylib in Frameworks */,
 				E10D016B19B6024F00D9E5F8 /* CoreGraphics.framework in Frameworks */,
 				E10D016D19B6024F00D9E5F8 /* UIKit.framework in Frameworks */,
 				E10D016919B6024F00D9E5F8 /* Foundation.framework in Frameworks */,
@@ -246,7 +243,6 @@
 			isa = PBXGroup;
 			children = (
 				E1B8888019B9CDC6006597C5 /* MessageUI.framework */,
-				E1DAD77519B85E7300600608 /* libz.dylib */,
 				E10D016819B6024F00D9E5F8 /* Foundation.framework */,
 				E10D016A19B6024F00D9E5F8 /* CoreGraphics.framework */,
 				E10D016C19B6024F00D9E5F8 /* UIKit.framework */,
@@ -415,7 +411,7 @@
 		E10D015D19B6024F00D9E5F8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Manchester Metropolitan University - ESS - essmobile";
 				TargetAttributes = {
 					E10D016419B6024F00D9E5F8 = {
@@ -613,6 +609,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				"CODE_SIGN_RESOURCE_RULES_PATH[sdk=*]" = "";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -627,7 +624,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -664,7 +661,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				ONLY_ACTIVE_ARCH = NO;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -683,8 +680,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Corsi/Corsi-Prefix.pch";
 				INFOPLIST_FILE = "Corsi/Corsi-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LIBRARY_SEARCH_PATHS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "uk.ac.mmu.ess.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -702,8 +700,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Corsi/Corsi-Prefix.pch";
 				INFOPLIST_FILE = "Corsi/Corsi-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LIBRARY_SEARCH_PATHS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "uk.ac.mmu.ess.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -727,6 +726,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "CorsiTests/CorsiTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "uk.ac.mmu.ess.www.jahowell.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Corsi.app/Corsi";
 				WRAPPER_EXTENSION = xctest;
@@ -745,6 +745,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Corsi/Corsi-Prefix.pch";
 				INFOPLIST_FILE = "CorsiTests/CorsiTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "uk.ac.mmu.ess.www.jahowell.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Corsi.app/Corsi";
 				WRAPPER_EXTENSION = xctest;

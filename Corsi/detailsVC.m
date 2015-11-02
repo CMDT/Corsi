@@ -4,6 +4,7 @@
 //
 //  Created by Jonathan Howell on 14/11/2014.
 //  Copyright (c) 2014 Manchester Metropolitan University - ESS - essmobile. All rights reserved.
+//  Minor updates and re-build for distro 2/11/15 jah
 //
 
 #import "detailsVC.h"
@@ -52,8 +53,6 @@
     [defaults setObject:singleton.subjectName forKey:kSubject];
     [defaults setObject:singleton.testerName forKey:kTester];
     [defaults setObject:singleton.email forKey:kEmail];
-
-
 }
 
 -(void)viewDidAppear:(BOOL)animated{
