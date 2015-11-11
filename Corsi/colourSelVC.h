@@ -28,7 +28,6 @@
 @property (strong, nonatomic) IBOutlet UIImageView  * blockCol4;
 @property (strong, nonatomic) IBOutlet UIImageView  * blockCol5;
 
-
 @property (strong, nonatomic)          NSArray      * colourArrayBack;
 @property (strong, nonatomic)          NSArray      * colourArrayShow;
 @property (strong, nonatomic)          NSArray      * colourArrayBlock;

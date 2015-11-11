@@ -32,6 +32,8 @@
 	</array>
 	<key>UIApplicationExitsOnSuspend</key>
 	<true/>
+	<key>UILaunchStoryboardName</key>
+	<string>Main_iPhone</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main_iPhone</string>
 	<key>UIMainStoryboardFile~ipad</key>

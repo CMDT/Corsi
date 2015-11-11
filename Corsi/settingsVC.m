@@ -779,7 +779,6 @@ UIAlertAction * cancelButtonTitle = [UIAlertAction
     [alert addAction:cancelButtonTitle];
     
     [self presentViewController:alert animated:YES completion:nil];
-    
 }
 
 -(float)randomDegrees359

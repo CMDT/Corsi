@@ -169,9 +169,7 @@ images, imageNames;
     label.text = [NSString stringWithFormat:@"%@", colourArrayBack[row]];
 
     //return label;
-
         return [images objectAtIndex:row],label;
-
     //
     //
 }
@@ -601,7 +599,6 @@ images, imageNames;
     }
     return myColour;
 }
-
 
 -(void)colourChecks{
     mySingleton *singleton = [mySingleton sharedSingleton];
