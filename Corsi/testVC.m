@@ -2183,7 +2183,7 @@
         for (int aa = 0; aa < start; aa++) {
             for (int bb = 0; bb < aa; bb++) {
                 //make positive
-                react = abs(reactionTime[aa][bb]);
+                react = fabsf(reactionTime[aa][bb]);
                 if (react>60000.00) {//about 60 seconds in ms
                     react=60001.00;//one more so I can see if it was set or was a default
                 }
@@ -2208,7 +2208,7 @@
         
         for (int aa = start; aa < finish+1; aa++) {
             
-            firstPress = abs(reactionTime[aa][0]);
+            firstPress = fabsf(reactionTime[aa][0]);
             testReactionTime[aa] = 0.00;
             
             tempString=[NSString stringWithFormat:@"%d,,", aa-2];
@@ -2221,21 +2221,21 @@
                 }else{
                     cc = bb - 1;
                 }
-                tempCalcR = abs(reactionTime[aa][cc]);
+                tempCalcR = fabsf(reactionTime[aa][cc]);
                 
-                actualReactionTime[aa][bb]   = abs(reactionTime[aa][bb] - tempCalcR);
+                actualReactionTime[aa][bb]   = fabsf(reactionTime[aa][bb] - tempCalcR);
                 
-                totalReactionTime    = abs(totalReactionTime    + actualReactionTime[aa][bb]);
-                testReactionTime[aa] = abs(testReactionTime[aa] + actualReactionTime[aa][bb]);
+                totalReactionTime    = fabsf(totalReactionTime    + actualReactionTime[aa][bb]);
+                testReactionTime[aa] = fabsf(testReactionTime[aa] + actualReactionTime[aa][bb]);
                 
                 //min
-                if ((shortestReactionTime[aa] > abs(actualReactionTime[aa][bb])) && (bb>0)) {
-                    shortestReactionTime[aa] = abs(actualReactionTime[aa][bb]);
+                if ((shortestReactionTime[aa] > fabsf(actualReactionTime[aa][bb])) && (bb>0)) {
+                    shortestReactionTime[aa] = fabsf(actualReactionTime[aa][bb]);
                 }
      
                 //max
-                if (longestReactionTime[aa] < abs(actualReactionTime[aa][bb])) {
-                    longestReactionTime[aa] = abs(actualReactionTime[aa][bb]);
+                if (longestReactionTime[aa] < fabsf(actualReactionTime[aa][bb])) {
+                    longestReactionTime[aa] = fabsf(actualReactionTime[aa][bb]);
                 }
 
                 //times
@@ -2257,7 +2257,7 @@
             }
             
             //avg absolute
-            averageReactionTime[aa] = abs(testReactionTime[aa] / (Float32)(aa-1));
+            averageReactionTime[aa] = fabsf(testReactionTime[aa] / (Float32)(aa-1));
             
             //stage end totals
             tempString = [NSString stringWithFormat:@"%@%@", tempString, [NSString stringWithFormat:@",%.0f", testReactionTime[aa]]];
@@ -2265,26 +2265,26 @@
             tempString = [NSString stringWithFormat:@"%@%@", tempString, [NSString stringWithFormat:@",%.0f", longestReactionTime[aa]]];
             tempString = [NSString stringWithFormat:@"%@%@", tempString, [NSString stringWithFormat:@",%.0f,", averageReactionTime[aa]]];
             
-            if (longestReactionTime[aa] < abs(reactionTime[aa][0])) {
-                longestReactionTime[aa] = abs(reactionTime[aa][0]);
+            if (longestReactionTime[aa] < fabsf(reactionTime[aa][0])) {
+                longestReactionTime[aa] = fabsf(reactionTime[aa][0]);
 
             }
-            if (shortestReactionTime[aa] > abs(reactionTime[aa][0])){
-                shortestReactionTime[aa] = abs(reactionTime[aa][0]);
+            if (shortestReactionTime[aa] > fabsf(reactionTime[aa][0])){
+                shortestReactionTime[aa] = fabsf(reactionTime[aa][0]);
             }
             tempString = [NSString stringWithFormat:@"%@%@", tempString, [NSString stringWithFormat:@",%.0f", testReactionTime[aa]+reactionTime[aa][0]]];
             tempString = [NSString stringWithFormat:@"%@%@", tempString, [NSString stringWithFormat:@",%.0f", shortestReactionTime[aa]]];
             tempString = [NSString stringWithFormat:@"%@%@", tempString, [NSString stringWithFormat:@",%.0f", longestReactionTime[aa]]];
             
             //add 1st reaction
-            testReactionTime[aa] = abs(testReactionTime[aa] + reactionTime[aa][0]);
+            testReactionTime[aa] = fabsf(testReactionTime[aa] + reactionTime[aa][0]);
             tempString=@"No. Test Reaction Time";
             [singleton.displayStringTitles addObject:tempString ];//title
             tempString=[NSString stringWithFormat:@"   %d: %.0f", aa-2, testReactionTime[aa]];
             [singleton.displayStringRows addObject: tempString];//data
             
             //avg
-            averageReactionTime[aa] = abs(testReactionTime[aa] / (Float32)aa);
+            averageReactionTime[aa] = fabsf(testReactionTime[aa] / (Float32)aa);
             tempString = [NSString stringWithFormat:@"%@%@", tempString, [NSString stringWithFormat:@",%.0f", averageReactionTime[aa]]];
             
             [singleton.resultStringRows addObject:tempString];//csv
@@ -2294,7 +2294,7 @@
             [singleton.displayStringRows addObject: tempString];//data
             
             //add the first guess on to the totals
-            totalReactionTime = abs(totalReactionTime + reactionTime[aa][0]);
+            totalReactionTime = fabsf(totalReactionTime + reactionTime[aa][0]);
 
             //1st one is zero, so don't count that.
             //Need to take into account that timing starts after 1st guess is received, although timer starts when user is asked

@@ -94,9 +94,13 @@ static mySingleton * sharedSingleton = nil;
         forwardTestDirection = YES;
         resultStrings        = @"";
         displayStrings       = @"";
-        resultStringRows     = [[NSMutableArray alloc]initWithObjects: nil];//clear the arrays of any data
-        displayStringRows    = [[NSMutableArray alloc]initWithObjects: nil];
-        displayStringTitles  = [[NSMutableArray alloc]initWithObjects: nil];
+        //resultStringRows     = [[NSMutableArray alloc]initWithObjects: nil];//clear the arrays of any data
+        //displayStringRows    = [[NSMutableArray alloc]initWithObjects: nil];
+        //displayStringTitles  = [[NSMutableArray alloc]initWithObjects: nil];
+        [resultStringRows  removeAllObjects]; //clear the arrays of any data
+        [displayStringRows   removeAllObjects];
+        [displayStringTitles   removeAllObjects];
+        
         email                = @"me@text.com";
         }
     return self;
