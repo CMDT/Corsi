@@ -248,7 +248,7 @@
 //*************************************************************
 //version, set anyway *****************************************
 //*************************************************************
-        version0 =  @"v1.1.0.02.11.15";        // version   *** keep short
+        version0 =  @"v1.2.0.12.11.15";        // version   *** keep short
         version1 =  @"MMU (c) 2015";           // copyright *** limited line space
         version2 =  @"j.a.howell@mmu.ac.uk";   // author    *** to display on device
         version3 =  @"http://www.mmu.ac.uk";   // web site  *** settings screen
