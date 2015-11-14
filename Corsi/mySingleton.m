@@ -4,7 +4,7 @@
 //
 //  Created by Jon Howell on 04/09/2014.
 //  Copyright (c) 2014 Manchester Metropolitan University - ESS - essmobile. All rights reserved.
-//  Minor updates and re-build for distro 2/11/15 jah
+//  Minor updates and re-build for distro 14/11/15 jah
 //
 
 #import "mySingleton.h"
@@ -94,12 +94,10 @@ static mySingleton * sharedSingleton = nil;
         forwardTestDirection = YES;
         resultStrings        = @"";
         displayStrings       = @"";
-        //resultStringRows     = [[NSMutableArray alloc]initWithObjects: nil];//clear the arrays of any data
-        //displayStringRows    = [[NSMutableArray alloc]initWithObjects: nil];
-        //displayStringTitles  = [[NSMutableArray alloc]initWithObjects: nil];
-        [resultStringRows  removeAllObjects]; //clear the arrays of any data
-        [displayStringRows   removeAllObjects];
-        [displayStringTitles   removeAllObjects];
+        //resultStringRows     = [[NSMutableArray alloc]initWithObjects: @"",nil]; //clear the arrays of any data
+        //displayStringRows    = [[NSMutableArray alloc]initWithObjects: @"",nil];
+        //displayStringTitles  = [[NSMutableArray alloc]initWithObjects: @"",nil];
+
         
         email                = @"me@text.com";
         }

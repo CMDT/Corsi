@@ -4,7 +4,7 @@
 //
 //  Created by Jon Howell on 04/09/2014.
 //  Copyright (c) 2014 Manchester Metropolitan University - ESS - essmobile. All rights reserved.
-//  Minor updates and re-build for distro 2/11/15 jah
+//  Minor updates and re-build for distro 14/11/15 jah
 //
 
 #import "testVC.h"
@@ -518,11 +518,11 @@
     //alertTextField1.keyboardType = UIKeyboardTypeEmailAddress;
     //alertTextField1.placeholder = singleton.email;
 
-    UITextField * alertTextField2 = [alert textFieldAtIndex:0];//used to be 1 for dual entry, 0 for single
+    UITextField * alertTextField2   = [alert textFieldAtIndex:0];//used to be 1 for dual entry, 0 for single
     alertTextField2.secureTextEntry = NO;
-    alertTextField2.textAlignment = NSTextAlignmentCenter;
-    alertTextField2.keyboardType = UIKeyboardTypeDefault;
-    alertTextField2.textAlignment =NSTextAlignmentNatural;
+    alertTextField2.textAlignment   = NSTextAlignmentCenter;
+    alertTextField2.keyboardType    = UIKeyboardTypeDefault;
+    alertTextField2.textAlignment   = NSTextAlignmentNatural;
     [alertTextField2 setFont:[UIFont fontWithName:@"Helvetica-Bold" size:(28.0)]];
     //if blank, add temp name, else add the current one
     if ([singleton.subjectName isEqualToString:@""]) {
@@ -719,7 +719,6 @@
     MessageView.hidden = NO;
     [self hideInfo];
     [self hide_blocks];
-
     
     //Cancel, return to settings after message
     [self buttonsDisable];
@@ -1850,7 +1849,6 @@
     }
 }
 
-
 -(void)calculations{
     //MessageView.hidden = YES;
     if (isAborted == NO) {
@@ -2369,13 +2367,13 @@
     [singleton.displayStringRows addObject: @""];//data
 
     //line
-    tempString=@"(c) MMU 2014 EES";
+    tempString=@"(c) MMU 2015 EES";
     [singleton.displayStringTitles addObject:tempString ]; //title
     [singleton.resultStringRows addObject:tempString]; //csv
     [singleton.displayStringRows addObject:@""]; //data
 
     //last line of data
-    tempString=@"www.ess.mmu.ac.uk/apps/corsi";
+    tempString=@"www.ess.mmu.ac.uk/";
     [singleton.displayStringTitles addObject:tempString ]; //title
     [singleton.resultStringRows addObject: tempString]; //csv
     [singleton.displayStringRows addObject: @""]; //data

@@ -18,9 +18,9 @@
 
 @implementation resultsVC{
     //IBOutlet UITextView *resultsViewBorder;
-    NSString *resultsTempString;
-    UILabel *titleLab;    //title
-    UILabel *resultLab;   //result
+    NSString * resultsTempString;
+    UILabel  * titleLab;    //title
+    UILabel  * resultLab;   //result
 }
 
 @synthesize
@@ -59,11 +59,13 @@
     resultsImage                    = [resultsImage     imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     resultsImageSel                 = [resultsImageSel  imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Results" image:resultsImage selectedImage: resultsImageSel];
-
+    
+//hide and show data and titles according to if data present
     tableView.hidden      = YES;
     emailBTN.hidden       = YES;
     resultsTxtView.hidden = NO;
     heading.hidden        = NO;
+    
     self.tabBarController.tabBar.hidden = NO;
 
     mySingleton *singleton = [mySingleton sharedSingleton];
@@ -86,7 +88,7 @@
     singleton.subjectName                   = [defaults  objectForKey:kSubject];
     
     long final = singleton.resultStringRows.count;
-    if (final > 0) {
+    if (final > 0) { //was 0 when nill array set in singleton
         for(long i=0; i< final; i++){
             element = [singleton.resultStringRows objectAtIndex: i];
             [printString appendString:[NSString stringWithFormat:@"\n%@", element]];
@@ -100,7 +102,7 @@
 
     long final2 = singleton.displayStringRows.count;
 
-    if (final2 > 0) {
+    if (final2 > 0) { //was 0 when nill array set in singleton
         for(long i=0; i< final2; i++){
             element2 = [singleton.displayStringRows objectAtIndex: i];
             [printString2 appendString:[NSString stringWithFormat:@"\n%@", element2]];

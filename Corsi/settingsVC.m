@@ -128,6 +128,7 @@
 //subjectLBL;//re instate if work out way to fit on screen space
 
 -(void)viewDidAppear:(BOOL)animated{
+    
 //assign images to tab bar items
     UIImage *settingsImage          = [UIImage imageNamed:@"settings"];
     UIImage *settingsImageSel       = [UIImage imageNamed:@"settings"];
@@ -215,7 +216,7 @@
     emailLBL.text=singleton.email;
     
     [self putBlocksInPlace];
-}
+    }
 
 - (void)viewDidLoad
 {
