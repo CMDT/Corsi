@@ -121,20 +121,22 @@
     //check if data exists, if not, display the holding message
     
     
-    if ([printString2 isEqualToString:@""]) {
-        resultsTxtView.text  = resultsTempString;
+    if (singleton.dataReady == NO) { //test for data, is there some to display
+        //no data yet
+        resultsTxtView.text  = resultsTempString; // info message displayed
         tableView.hidden=YES;
         emailBTN.hidden=YES;
         resultsTxtView.hidden=NO;
-
     }else{
-        resultsTxtView.text  = singleton.displayStrings;
+        //there is data
+        resultsTxtView.text  = singleton.displayStrings; //table of data displayed
         tableView.hidden=NO;
         emailBTN.hidden=NO;
         resultsTxtView.hidden=YES;
     }
     //[self saveText];
-    if (![printString isEqualToString: @""]) {
+    //if (![printString isEqualToString: @""]) {
+    if (singleton.dataReady == YES) {
         [self WriteToStringFile:[printString mutableCopy]];
     }
 }

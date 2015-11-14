@@ -42,6 +42,7 @@ static mySingleton * sharedSingleton = nil;
     onScreenInfo,
     animals,
     sounds,
+    dataReady,          //if there is data to display in the table YES bool
     beepEffect,
 
     displayStrings,     //result item
@@ -89,14 +90,15 @@ static mySingleton * sharedSingleton = nil;
         onScreenInfo         = YES;
         animals              = NO;
         sounds               = YES;
+        dataReady            = NO;
         beepEffect           = @"BEEPJAZZ";
         segIndex             = 5;
         forwardTestDirection = YES;
         resultStrings        = @"";
         displayStrings       = @"";
-        //resultStringRows     = [[NSMutableArray alloc]initWithObjects: @"",nil]; //clear the arrays of any data
-        //displayStringRows    = [[NSMutableArray alloc]initWithObjects: @"",nil];
-        //displayStringTitles  = [[NSMutableArray alloc]initWithObjects: @"",nil];
+        resultStringRows     = [[NSMutableArray alloc]initWithObjects: @"",nil]; //clear the arrays of any data
+        displayStringRows    = [[NSMutableArray alloc]initWithObjects: @"",nil];
+        displayStringTitles  = [[NSMutableArray alloc]initWithObjects: @"",nil];
 
         
         email                = @"me@text.com";

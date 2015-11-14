@@ -1860,10 +1860,13 @@
     [singleton.resultStringRows removeAllObjects];
     [singleton.displayStringRows removeAllObjects];
     [singleton.displayStringTitles removeAllObjects];
+        
+    //flag that there is no data to display yet
+    singleton.dataReady = NO;
 
     //clear output strings
-    singleton.resultStrings=@"";
-    singleton.displayStrings=@"";
+    singleton.resultStrings = @"";
+    singleton.displayStrings= @"";
 
     singleton.testTime=[self getCurrentTime];
     singleton.testDate=[self getCurrentDate];
@@ -2383,6 +2386,9 @@
     [singleton.displayStringTitles addObject:tempString ]; //title
     [singleton.resultStringRows addObject: tempString]; //csv
     [singleton.displayStringRows addObject: tempString]; //data
+       
+    // Flag that the data can be placed in the table as is ready
+    singleton.dataReady=YES;
         
     //jump to the results page
     [NSTimer scheduledTimerWithTimeInterval: 0 target:self selector:@selector(jumpToResultsView) userInfo:nil repeats:NO];

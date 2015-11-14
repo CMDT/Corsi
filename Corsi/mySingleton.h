@@ -32,6 +32,7 @@
     BOOL onScreenInfo;
     BOOL animals;
     BOOL sounds;
+    BOOL dataReady;
 
     NSString * beepEffect;//from plist
     NSString * oldSubjectName;
@@ -70,6 +71,7 @@
 @property (nonatomic) BOOL      onScreenInfo;
 @property (nonatomic) BOOL      animals;
 @property (nonatomic) BOOL      sounds;
+@property (nonatomic) BOOL      dataReady;
 
 @property (nonatomic,retain) NSString * beepEffect;
 @property (nonatomic,retain) NSString * oldSubjectName;
@@ -90,4 +92,3 @@
 +(mySingleton *)sharedSingleton;
 
 @end
-

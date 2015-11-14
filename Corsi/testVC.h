@@ -87,8 +87,8 @@
 
 -(UIImage*)getAnimal:(int)animalNo;
 
--(NSString*)getCurrentDate;
--(NSString*)getCurrentTime;
+-(NSString*) getCurrentDate;
+-(NSString*) getCurrentTime;
 -(NSString*) make9order;
 -(NSString*) rev9Order:(NSString*)forOrder;
 
