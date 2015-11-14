@@ -21,6 +21,7 @@
 		91C091641A16A9D100036CCF /* detailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C091631A16A9D100036CCF /* detailsVC.m */; };
 		91CCCCF819D77AE000C742B6 /* purple72.png in Resources */ = {isa = PBXBuildFile; fileRef = 91CCCCF419D77AE000C742B6 /* purple72.png */; };
 		91CCCCFB19D77AE000C742B6 /* brown72.png in Resources */ = {isa = PBXBuildFile; fileRef = 91CCCCF719D77AE000C742B6 /* brown72.png */; };
+		91CF12691BF7B6E4004191BC /* noDataVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 91CF12681BF7B6E4004191BC /* noDataVC.m */; };
 		91E2633819D88D47005B2643 /* timingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E2633719D88D47005B2643 /* timingVC.m */; };
 		91E2633B19D88D68005B2643 /* blockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E2633A19D88D68005B2643 /* blockVC.m */; };
 		91E2633D19D8914B005B2643 /* check72gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 91E2633C19D8914B005B2643 /* check72gray.png */; };
@@ -113,6 +114,8 @@
 		91C091631A16A9D100036CCF /* detailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = detailsVC.m; sourceTree = "<group>"; };
 		91CCCCF419D77AE000C742B6 /* purple72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = purple72.png; sourceTree = "<group>"; };
 		91CCCCF719D77AE000C742B6 /* brown72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brown72.png; sourceTree = "<group>"; };
+		91CF12671BF7B6E4004191BC /* noDataVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = noDataVC.h; sourceTree = "<group>"; };
+		91CF12681BF7B6E4004191BC /* noDataVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = noDataVC.m; sourceTree = "<group>"; };
 		91E2633619D88D47005B2643 /* timingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timingVC.h; sourceTree = "<group>"; };
 		91E2633719D88D47005B2643 /* timingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = timingVC.m; sourceTree = "<group>"; };
 		91E2633919D88D68005B2643 /* blockVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = blockVC.h; sourceTree = "<group>"; };
@@ -266,6 +269,8 @@
 				E1DAD7AD19B8A95000600608 /* testVC.m */,
 				E1DAD7AF19B8A98800600608 /* resultsVC.h */,
 				E1DAD7B019B8A98800600608 /* resultsVC.m */,
+				91CF12671BF7B6E4004191BC /* noDataVC.h */,
+				91CF12681BF7B6E4004191BC /* noDataVC.m */,
 				E1DAD7B219B8A9A500600608 /* informationVC.h */,
 				E1DAD7B319B8A9A500600608 /* informationVC.m */,
 				91C091621A16A9D100036CCF /* detailsVC.h */,
@@ -532,6 +537,7 @@
 				E10D017919B6024F00D9E5F8 /* AppDelegate.m in Sources */,
 				E10D017519B6024F00D9E5F8 /* main.m in Sources */,
 				91C091641A16A9D100036CCF /* detailsVC.m in Sources */,
+				91CF12691BF7B6E4004191BC /* noDataVC.m in Sources */,
 				91E2633819D88D47005B2643 /* timingVC.m in Sources */,
 				E1DAD7AE19B8A95000600608 /* testVC.m in Sources */,
 			);

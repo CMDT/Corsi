@@ -94,11 +94,11 @@ static mySingleton * sharedSingleton = nil;
         beepEffect           = @"BEEPJAZZ";
         segIndex             = 5;
         forwardTestDirection = YES;
-        resultStrings        = @"- C O R S I -";
-        displayStrings       = @"- C O R S I -";
-        resultStringRows     = [[NSMutableArray alloc]initWithObjects: @"- C O R S I -rsr",nil]; //clear the arrays of any data
-        displayStringRows    = [[NSMutableArray alloc]initWithObjects: @"- C O R S I -dsr",nil];
-        displayStringTitles  = [[NSMutableArray alloc]initWithObjects: @"- C O R S I -dst",nil];
+        resultStrings        = @"";
+        displayStrings       = @"";
+        resultStringRows     = [[NSMutableArray alloc]initWithObjects: @"",nil]; //clear the arrays of any data
+        displayStringRows    = [[NSMutableArray alloc]initWithObjects: @"",nil];
+        displayStringTitles  = [[NSMutableArray alloc]initWithObjects: @"",nil];
 
         
         email                = @"me@text.com";

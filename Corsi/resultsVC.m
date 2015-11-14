@@ -54,21 +54,15 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    UIImage *resultsImage           = [UIImage imageNamed:@"results"];
-    UIImage *resultsImageSel        = [UIImage imageNamed:@"results"];
-    resultsImage                    = [resultsImage     imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    resultsImageSel                 = [resultsImageSel  imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Results" image:resultsImage selectedImage: resultsImageSel];
-    
+    mySingleton *singleton = [mySingleton sharedSingleton];
 //hide and show data and titles according to if data present
     tableView.hidden      = YES;
     emailBTN.hidden       = YES;
     resultsTxtView.hidden = NO;
     heading.hidden        = NO;
+  
     
     self.tabBarController.tabBar.hidden = NO;
-
-    mySingleton *singleton = [mySingleton sharedSingleton];
 
     resultsTempString = @"\n\nThe Corsi Block Tapping Test results and analysis will appear in a table here, once a test has been completed.\n\nTest results will stay visible until a new test is finished, or you press the Home Button on your device.\n\nPressing the home button deletes all unsent email data and resets the Application.\n\nData viewed on screen can be sent by Email as a text file attachment of type CSV, which can be read by many other applications such as a spreadsheets.\n\nPlease ensure that you have correctly set the receiving Email Address.\n\nThe data sent by Email contains reaction timing information not shown on this screen.";
     
@@ -88,7 +82,7 @@
     singleton.subjectName                   = [defaults  objectForKey:kSubject];
     
     long final = singleton.resultStringRows.count;
-    if (final > 0) { //was 0 when nill array set in singleton
+    if (final > 1) { //was 0 when nill array set in singleton
         for(long i=0; i< final; i++){
             element = [singleton.resultStringRows objectAtIndex: i];
             [printString appendString:[NSString stringWithFormat:@"\n%@", element]];
@@ -102,7 +96,7 @@
 
     long final2 = singleton.displayStringRows.count;
 
-    if (final2 > 0) { //was 0 when nill array set in singleton
+    if (final2 > 1) { //was 0 when nill array set in singleton
         for(long i=0; i< final2; i++){
             element2 = [singleton.displayStringRows objectAtIndex: i];
             [printString2 appendString:[NSString stringWithFormat:@"\n%@", element2]];
@@ -132,14 +126,15 @@
         resultsTxtView.hidden=NO;
     }else{
         //there is data
-        resultsTxtView.text  = singleton.displayStrings; //table of data displayed
+        //resultsTxtView.text  = singleton.displayStrings; //table of data displayed
+        resultsTxtView.text  = printString; //table of data displayed
         tableView.hidden=NO;
         emailBTN.hidden=NO;
         resultsTxtView.hidden=YES;
     }
     //[self saveText];
-    //if (![printString isEqualToString: @""]) {
-    if (singleton.dataReady == YES) {
+    if (![printString isEqualToString: @""]) {
+    //if (singleton.dataReady == YES) {
         [self WriteToStringFile:[printString mutableCopy]];
     }
 }
@@ -267,7 +262,7 @@ forRowAtIndexPath: (NSIndexPath*)indexPath
 }
 
 //find the home directory for Document
--(NSString *)GetDocumentDirectory{
+-(NSString *) GetDocumentDirectory{
     NSString * docsDir;
     NSArray  * dirPaths;
     

@@ -1669,6 +1669,7 @@
 
         [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(selectTabBarResults) userInfo:nil repeats:NO];
     }else{
+        
         //jump to selector SettingsVC
 
         [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(selectTabBarSettings) userInfo:nil repeats:NO];
@@ -1697,7 +1698,7 @@
 }
 
 -(void)selectTabBarSettings{
-
+    
     //jump to the setting view
     int controllerIndex = 0;
 
@@ -2370,7 +2371,7 @@
     [singleton.displayStringRows addObject: @""];//data
 
     //line
-    tempString=@"(c) MMU 2015 EES";
+    tempString=@"(c) MMU 2015 ESS";
     [singleton.displayStringTitles addObject:tempString ]; //title
     [singleton.resultStringRows addObject:tempString]; //csv
     [singleton.displayStringRows addObject:@""]; //data
