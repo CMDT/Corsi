@@ -120,6 +120,9 @@
     
     //check if data exists, if not, display the holding message
     
+    NSLog(@"/n/n *** Display info was ***:%@", printString);
+    NSLog(@"/n/n *** Display data was ***:%@", printString2);
+    NSLog(@"/n/n *** Data Ready Flag =:%i ***", singleton.dataReady);
     
     if (singleton.dataReady == NO) { //test for data, is there some to display
         //no data yet
@@ -171,6 +174,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView1 cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     mySingleton *singleton = [mySingleton sharedSingleton];
+
     static NSString *cellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView1 dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
