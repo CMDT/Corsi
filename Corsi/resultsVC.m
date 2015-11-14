@@ -60,7 +60,16 @@
     emailBTN.hidden       = YES;
     resultsTxtView.hidden = NO;
     heading.hidden        = NO;
-  
+    if(singleton.dataReady==NO){ //flag that there is no data to display yet
+        //clear arrays for results strings
+        [singleton.resultStringRows removeAllObjects];
+        [singleton.displayStringRows removeAllObjects];
+        [singleton.displayStringTitles removeAllObjects];
+        
+        //clear output strings
+        singleton.resultStrings = @"";
+        singleton.displayStrings= @"";
+    }
     
     self.tabBarController.tabBar.hidden = NO;
 
@@ -137,6 +146,7 @@
     //if (singleton.dataReady == YES) {
         [self WriteToStringFile:[printString mutableCopy]];
     }
+    [tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
