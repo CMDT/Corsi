@@ -54,12 +54,23 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
+  
+    
+     UIImage *testImage      = [UIImage imageNamed:@"results"];
+     UIImage *testImageSel   = [UIImage imageNamed:@"results"];
+     testImage               = [testImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+     testImageSel            = [testImageSel imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+     self.tabBarItem         = [[UITabBarItem alloc] initWithTitle:@"Results" image:testImage selectedImage: testImageSel];
+    
+    self.tabBarController.tabBar.hidden = NO;
     mySingleton *singleton = [mySingleton sharedSingleton];
+    
 //hide and show data and titles according to if data present
     tableView.hidden      = YES;
     emailBTN.hidden       = YES;
     resultsTxtView.hidden = NO;
     heading.hidden        = NO;
+    
     if(singleton.dataReady==NO){ //flag that there is no data to display yet
         //clear arrays for results strings
         [singleton.resultStringRows removeAllObjects];
@@ -71,7 +82,7 @@
         singleton.displayStrings= @"";
     }
     
-    self.tabBarController.tabBar.hidden = NO;
+    //self.tabBarController.tabBar.hidden = NO;
 
     resultsTempString = @"\n\nThe Corsi Block Tapping Test results and analysis will appear in a table here, once a test has been completed.\n\nTest results will stay visible until a new test is finished, or you press the Home Button on your device.\n\nPressing the home button deletes all unsent email data and resets the Application.\n\nData viewed on screen can be sent by Email as a text file attachment of type CSV, which can be read by many other applications such as a spreadsheets.\n\nPlease ensure that you have correctly set the receiving Email Address.\n\nThe data sent by Email contains reaction timing information not shown on this screen.";
     

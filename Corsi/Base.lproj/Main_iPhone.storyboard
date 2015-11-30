@@ -415,7 +415,7 @@
                             <constraint firstItem="YiZ-Nh-6f7" firstAttribute="leading" secondItem="8im-2Q-xAb" secondAttribute="leadingMargin" id="xJs-57-ihG"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="JfG-Kt-5KA">
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings.png" selectedImage="settings.png" id="JfG-Kt-5KA">
                         <inset key="imageInsets" minX="15" minY="15" maxX="15" maxY="15"/>
                     </tabBarItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
@@ -1125,7 +1125,7 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" tag="2" title="Results" image="results" id="RRh-7Z-4U7">
+                    <tabBarItem key="tabBarItem" tag="2" title="Results" image="results.png" selectedImage="results.png" id="RRh-7Z-4U7">
                         <inset key="imageInsets" minX="15" minY="15" maxX="15" maxY="15"/>
                     </tabBarItem>
                     <connections>
@@ -1170,7 +1170,7 @@
                         <viewControllerLayoutGuide type="bottom" id="z4p-bz-W46"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lfF-OU-0B0">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F14-pU-g4N">
@@ -1350,7 +1350,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6tj-yi-W4u">
-                                <rect key="frame" x="16" y="509" width="288" height="51"/>
+                                <rect key="frame" x="16" y="460" width="288" height="51"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1421,12 +1421,11 @@
                             <constraint firstItem="6tj-yi-W4u" firstAttribute="trailing" secondItem="lfF-OU-0B0" secondAttribute="trailingMargin" id="nbc-aj-oSJ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="3" title="Test" image="test" id="uI8-6A-gw6">
+                    <tabBarItem key="tabBarItem" tag="3" title="Test" image="test.png" selectedImage="test.png" id="uI8-6A-gw6">
                         <inset key="imageInsets" minX="15" minY="15" maxX="15" maxY="15"/>
                     </tabBarItem>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="MessageTextView" destination="3YN-so-yJM" id="sVl-kV-crl"/>
                         <outlet property="MessageView" destination="2Pd-MY-wKc" id="yWX-kc-hnE"/>
@@ -1512,7 +1511,7 @@
                             <constraint firstItem="24H-DS-3Oq" firstAttribute="top" secondItem="kTD-oj-SgO" secondAttribute="bottom" constant="8" id="xuI-2R-Jr0"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="1" title="Information" image="information" id="H2M-mc-v72">
+                    <tabBarItem key="tabBarItem" tag="1" title="Information" image="information.png" selectedImage="information.png" id="H2M-mc-v72">
                         <inset key="imageInsets" minX="15" minY="15" maxX="15" maxY="15"/>
                     </tabBarItem>
                     <connections>
@@ -1766,14 +1765,15 @@ first.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FMQ-f0-uws" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-612" y="-409"/>
+            <point key="canvasLocation" x="-435" y="-422"/>
         </scene>
     </scenes>
     <resources>
-        <image name="information" width="32" height="32"/>
+        <image name="information.png" width="32" height="32"/>
         <image name="results" width="32" height="32"/>
-        <image name="settings" width="25" height="25"/>
-        <image name="test" width="32" height="32"/>
+        <image name="results.png" width="32" height="32"/>
+        <image name="settings.png" width="32" height="32"/>
+        <image name="test.png" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Wql-br-OP6"/>

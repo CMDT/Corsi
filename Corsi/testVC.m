@@ -166,6 +166,8 @@
     NSURL *mySoundEffectURL=[NSURL fileURLWithPath:mySoundEffectPath];
     AudioServicesCreateSystemSoundID(CFBridgingRetain(mySoundEffectURL),&mySoundEffect);
     
+    self.tabBarController.tabBar.hidden = NO;
+    
     infoShow = singleton.onScreenInfo;
 
     flash2 = 0.25;// flash button when pressed
@@ -179,19 +181,21 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
+   
+    UIImage *testImage      = [UIImage imageNamed:@"test"];
+    UIImage *testImageSel   = [UIImage imageNamed:@"test"];
+    testImage               = [testImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    testImageSel            = [testImageSel imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    self.tabBarItem         = [[UITabBarItem alloc] initWithTitle:@"Test" image:testImage selectedImage: testImageSel];
+    
+    self.tabBarController.tabBar.hidden = NO;
+    
     [self hideInfo];
     MessageTextView.hidden=YES;
     startBTN.hidden   = NO;
     headingLBL.hidden = NO;
     isAborted         = NO;
-    UIImage *testImage      = [UIImage imageNamed:@"test.png"];
-    UIImage *testImageSel   = [UIImage imageNamed:@"test.png"];
-    testImage               = [testImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    testImageSel            = [testImageSel imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.tabBarItem         = [[UITabBarItem alloc] initWithTitle:@"Test" image:testImage selectedImage: testImageSel];
-
-    self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Test" image:testImage selectedImage: testImageSel];
-
+        
     [self initialiseBlocks];
     isAborted=NO;
 

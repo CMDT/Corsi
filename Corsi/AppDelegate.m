@@ -8,7 +8,6 @@
 //
 
 #import "AppDelegate.h"
-//#import "TestFlight.h"
 
 @implementation AppDelegate{
 
@@ -34,8 +33,6 @@
                                               cancelButtonTitle:@"Continue"
                                               otherButtonTitles:nil];
     
-    
-
     UILabel *txtField = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, 180, 230)];
     
     //[txtField setFont:[UIFont fontWithName:@"Serifa-Roman" size:(16.0f)]];
@@ -45,7 +42,7 @@
     txtField.backgroundColor = [UIColor clearColor];
     txtField.textAlignment = NSTextAlignmentCenter;
     
-    txtField.text = @"To see details on how to \nuse this Application\n and adjust its settings, \nplease read the notes in \nthe 'Information' section.\n\nThis Application is NOT \nfor clinical use. v1.2.14.11.15";
+    txtField.text = @"To see details on how to \nuse this Application\n and adjust its settings, \nplease read the notes in \nthe 'Information' section.\n\nThis Application is NOT \nfor clinical use. v1.2.1.30.11.15";
 
     [alertView setValue:txtField forKeyPath:@"accessoryView"]; //for ios 7 and above
 

@@ -130,11 +130,15 @@
 -(void)viewDidAppear:(BOOL)animated{
     
 //assign images to tab bar items
+    
+    //try and use default method for images, as some issues with this way of preloading them
+    
     UIImage *settingsImage          = [UIImage imageNamed:@"settings"];
     UIImage *settingsImageSel       = [UIImage imageNamed:@"settings"];
     settingsImage       = [settingsImage    imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     settingsImageSel    = [settingsImageSel imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Settings" image:settingsImage selectedImage: settingsImageSel];
+    
     self.tabBarController.tabBar.hidden = NO;
     mySingleton *singleton = [mySingleton sharedSingleton];
 
