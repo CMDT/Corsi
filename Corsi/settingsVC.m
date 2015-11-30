@@ -139,7 +139,6 @@
     settingsImageSel    = [settingsImageSel imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Settings" image:settingsImage selectedImage: settingsImageSel];
     
-    self.tabBarController.tabBar.hidden = NO;
     mySingleton *singleton = [mySingleton sharedSingleton];
 
     NSString * pathStr               = [[NSBundle mainBundle] bundlePath];
@@ -220,6 +219,8 @@
     emailLBL.text=singleton.email;
     
     [self putBlocksInPlace];
+    
+    self.tabBarController.tabBar.hidden = NO;
     }
 
 - (void)viewDidLoad

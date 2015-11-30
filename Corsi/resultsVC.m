@@ -61,7 +61,6 @@
      resultsImageSel            = [resultsImageSel imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
      self.tabBarItem            = [[UITabBarItem alloc] initWithTitle:@"Results" image:resultsImage selectedImage: resultsImageSel];
     
-    self.tabBarController.tabBar.hidden = NO;
     mySingleton *singleton = [mySingleton sharedSingleton];
     
 //hide and show data and titles according to if data present
@@ -157,6 +156,8 @@
         [self WriteToStringFile:[printString mutableCopy]];
     }
     [tableView reloadData];
+    
+    //self.tabBarController.tabBar.hidden = NO;
 }
 
 - (void)didReceiveMemoryWarning

@@ -188,8 +188,6 @@
     testImageSel            = [testImageSel imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     self.tabBarItem         = [[UITabBarItem alloc] initWithTitle:@"Test" image:testImage selectedImage: testImageSel];
     
-    self.tabBarController.tabBar.hidden = NO;
-    
     [self hideInfo];
     MessageTextView.hidden=YES;
     startBTN.hidden   = NO;
@@ -232,6 +230,8 @@
     card[7] = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"cancelled.png"]]; //cancel message
     //card[8] = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"corsi_blank.png"]];     //just a blank card
     //card[9] = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"redblocks800.png"]];     //picture of some coloured blocks
+    
+    //self.tabBarController.tabBar.hidden = NO;
 }
 
 -(void)startStop{
@@ -1721,6 +1721,8 @@
                         }
                     }];
     //settings VC jump
+    
+    self.tabBarController.tabBar.hidden = NO;
 }
 
 -(void)blankMSG3 {

@@ -53,7 +53,7 @@
     infoImageSel                 = [infoImageSel  imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     self.tabBarItem              = [[UITabBarItem alloc] initWithTitle:@"Information" image:infoImage selectedImage: infoImageSel];
         
-    self.tabBarController.tabBar.hidden = NO;
+    //self.tabBarController.tabBar.hidden = NO;
 }
 
 - (void)didReceiveMemoryWarning
