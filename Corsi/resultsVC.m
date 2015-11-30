@@ -54,13 +54,12 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-  
-    
-     UIImage *testImage      = [UIImage imageNamed:@"results"];
-     UIImage *testImageSel   = [UIImage imageNamed:@"results"];
-     testImage               = [testImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-     testImageSel            = [testImageSel imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-     self.tabBarItem         = [[UITabBarItem alloc] initWithTitle:@"Results" image:testImage selectedImage: testImageSel];
+
+     UIImage *resultsImage      = [UIImage imageNamed:@"results"];
+     UIImage *resultsImageSel   = [UIImage imageNamed:@"results"];
+     resultsImage               = [resultsImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+     resultsImageSel            = [resultsImageSel imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+     self.tabBarItem            = [[UITabBarItem alloc] initWithTitle:@"Results" image:resultsImage selectedImage: resultsImageSel];
     
     self.tabBarController.tabBar.hidden = NO;
     mySingleton *singleton = [mySingleton sharedSingleton];
@@ -134,9 +133,9 @@
     
     //check if data exists, if not, display the holding message
     
-    NSLog(@"/n/n *** Display info was ***:%@", printString);
-    NSLog(@"/n/n *** Display data was ***:%@", printString2);
-    NSLog(@"/n/n *** Data Ready Flag =:%i ***", singleton.dataReady);
+    //NSLog(@"/n/n *** Display info was ***:%@", printString);
+    //NSLog(@"/n/n *** Display data was ***:%@", printString2);
+    //NSLog(@"/n/n *** Data Ready Flag =:%i ***", singleton.dataReady);
     
     if (singleton.dataReady == NO) { //test for data, is there some to display
         //no data yet
@@ -394,7 +393,7 @@ forRowAtIndexPath: (NSIndexPath*)indexPath
 }
 
 - (IBAction)showEmail:(id)sender {
-    NSLog(@"Sending Email");
+    //NSLog(@"Sending Email");
     mySingleton *singleton = [mySingleton sharedSingleton];
 
     singleton.testDate=[self getCurrentDate];

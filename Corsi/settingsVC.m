@@ -253,10 +253,10 @@
 //*************************************************************
 //version, set anyway *****************************************
 //*************************************************************
-        version0 =  @"v1.2.0.12.11.15";        // version   *** keep short
+        version0 =  @"v1.2.1.30.11.15";        // version   *** keep short
         version1 =  @"MMU (c) 2015";           // copyright *** limited line space
         version2 =  @"j.a.howell@mmu.ac.uk";   // author    *** to display on device
-        version3 =  @"http://www.mmu.ac.uk";   // web site  *** settings screen
+        version3 =  @"http://www.ess.mmu.ac.uk";   // web site  *** settings screen
 //*************************************************************
         [defaults setObject:version0 forKey:kVersion0];   //***
         [defaults setObject:version1 forKey:kVersion1];   //***
@@ -613,7 +613,7 @@
 
     //read the user defaults from the iPhone/iPad bundle
     // if any are set to nil (no value on first run), put a temporary one in
-    NSLog(@"Saving settings to singleton...");
+    //NSLog(@"Saving settings to singleton...");
     
     //block colour
         [defaults setObject:[self colourUIToString:singleton.currentBlockColour] forKey:kBlockCol];

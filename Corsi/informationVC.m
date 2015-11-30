@@ -49,10 +49,9 @@
     
     UIImage *infoImage           = [UIImage imageNamed:@"information"];
     UIImage *infoImageSel        = [UIImage imageNamed:@"information"];
-    infoImage        = [infoImage     imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    infoImageSel     = [infoImageSel  imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-
-    self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Information" image:infoImage selectedImage: infoImageSel];
+    infoImage                    = [infoImage     imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    infoImageSel                 = [infoImageSel  imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    self.tabBarItem              = [[UITabBarItem alloc] initWithTitle:@"Information" image:infoImage selectedImage: infoImageSel];
         
     self.tabBarController.tabBar.hidden = NO;
 }

@@ -996,7 +996,7 @@
         }
 
         int t=[self whichBlock:ncounter :xcounter];
-        NSLog(@"block showing : %i seq : %i set : %i", t, ncounter, xcounter);
+        //NSLog(@"block showing : %i seq : %i set : %i", t, ncounter, xcounter);
         //show the t block
     switch (t) {
         case 1:
@@ -2181,8 +2181,8 @@
         
         //nb arrays and vars zeroed in boxinit before timings start.
         
-        NSLog(@"Timings follow");
-        NSLog(@"--------------");
+        //NSLog(@"Timings follow");
+        //NSLog(@"--------------");
         
         //check timing data is within limits and set max/mins if extended.  Crash possible if very long times get through.
         Float32 react=0.00;
@@ -2248,10 +2248,10 @@
                 
                 if (bb == 0) {
                     tempString = [NSString stringWithFormat:@"%@%@", tempString, [NSString stringWithFormat:@",%.0f", reactionTime[aa][0]]];
-                    NSLog(@"reaction time:            r-%.0f mS", reactionTime[aa][bb]);
+                    //NSLog(@"reaction time:            r-%.0f mS", reactionTime[aa][bb]);
                 }else{
                     tempString = [NSString stringWithFormat:@"%@%@", tempString, [NSString stringWithFormat:@",%.0f", actualReactionTime[aa][bb]]];
-                    NSLog(@"reaction time:            r-%.0f mS aa=%d bb=%d", actualReactionTime[aa][bb],aa,bb);
+                    //NSLog(@"reaction time:            r-%.0f mS aa=%d bb=%d", actualReactionTime[aa][bb],aa,bb);
                 }
                 //NSLog(@"cumulative reaction time: c-%.0f mS", reactionTime[aa][bb]);
             }
