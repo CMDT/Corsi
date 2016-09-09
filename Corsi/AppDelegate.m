@@ -5,12 +5,12 @@
 //  Created by Jon Howell on 02/09/2014.
 //  Copyright (c) 2014 Manchester Metropolitan University - ESS - essmobile. All rights reserved.
 //  Minor updates and re-build for distro 2/11/15 jah
+//  Minor updates and re-build for distro 9/9/16 jah
 //
 
 #import "AppDelegate.h"
 
 @implementation AppDelegate{
-
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -42,7 +42,7 @@
     txtField.backgroundColor = [UIColor clearColor];
     txtField.textAlignment = NSTextAlignmentCenter;
     
-    txtField.text = @"To see details on how to \nuse this Application\n and adjust its settings, \nplease read the notes in \nthe 'Information' section.\n\nThis Application is NOT \nfor clinical use. v1.2.1.30.11.15";
+    txtField.text = @"To see details on how to \nuse this Application\n and adjust its settings, \nplease read the notes in \nthe 'Information' section.\n\nThis Application is NOT \nfor clinical use. v1.3.0.9.9.16";
 
     [alertView setValue:txtField forKeyPath:@"accessoryView"]; //for ios 7 and above
 

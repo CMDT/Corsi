@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Manchester Metropolitan University - ESS - essmobile. All rights reserved.
 //
 //  Minor updates and re-build for distro 2/11/15 jah
+//  Minor updates and re-build for distro 9/9/16 jah
 // NB. *** on new version, set detials in defaults function
 
 #import "settingsVC.h"
@@ -254,10 +255,11 @@
 //*************************************************************
 //version, set anyway *****************************************
 //*************************************************************
-        version0 =  @"v1.2.1.30.11.15";        // version   *** keep short
-        version1 =  @"MMU (c) 2015";           // copyright *** limited line space
-        version2 =  @"j.a.howell@mmu.ac.uk";   // author    *** to display on device
+        version0 =  @"v1.3.0.9.9.16";              // version   *** keep short
+        version1 =  @"MMU (c) 2016";               // copyright *** limited line space
+        version2 =  @"j.a.howell@mmu.ac.uk";       // author    *** to display on device
         version3 =  @"http://www.ess.mmu.ac.uk";   // web site  *** settings screen
+//*************************************************************************************** check web site address as not working at present
 //*************************************************************
         [defaults setObject:version0 forKey:kVersion0];   //***
         [defaults setObject:version1 forKey:kVersion1];   //***
@@ -645,7 +647,6 @@
         [defaults setObject:[NSString stringWithFormat:@"%@", singleton.email] forKey:kEmail];
         [defaults setObject:[NSString stringWithFormat:@"%@", singleton.testerName] forKey:kTester];
         [defaults synchronize];//make sure all are updated
-    
     /*
     // Alerts changed in ios9
     UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"CORSI TEST SETTINGS"

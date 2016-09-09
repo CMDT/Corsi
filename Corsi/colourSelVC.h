@@ -3,7 +3,8 @@
 //  Corsi
 //
 //  Created by Jon Howell on 24/11/2014.
-//  Copyright (c) 2014 Manchester Metropolitan University - ESS - essmobile. All rights reserved.
+//  Copyright (c) 2014 Manchester Metropolitan Univers
+//  Minor updates and re-build for distro 9/9/16 jahity - ESS - essmobile. All rights reserved.
 //  Minor updates and re-build for distro 2/11/15 jah
 //
 
