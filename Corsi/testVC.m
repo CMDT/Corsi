@@ -2378,7 +2378,7 @@
     [singleton.displayStringRows addObject: @""];//data
 
     //line
-    tempString=@"(c) MMU 2015 ESS";
+    tempString=@"(c) MMU 2016 ESS";
     [singleton.displayStringTitles addObject:tempString ]; //title
     [singleton.resultStringRows addObject:tempString]; //csv
     [singleton.displayStringRows addObject:@""]; //data

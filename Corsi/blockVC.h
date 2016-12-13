@@ -28,9 +28,9 @@
 
 - (void)buttonIncCheck;
 
-@property (retain, nonatomic) IBOutlet UILabel *blockStartNumLBL;
-@property (retain, nonatomic) IBOutlet UILabel *blockFinishNumLBL;
-@property (retain, nonatomic) IBOutlet UILabel *blockSizeLBL;
+@property (retain, nonatomic) IBOutlet UILabel  *blockStartNumLBL;
+@property (retain, nonatomic) IBOutlet UILabel  *blockFinishNumLBL;
+@property (retain, nonatomic) IBOutlet UILabel  *blockSizeLBL;
 @property (weak,   nonatomic) IBOutlet UISegmentedControl *soundsSEG;
 
 @property (strong, nonatomic) IBOutlet UIButton *startMinusBTN;
@@ -40,10 +40,10 @@
 @property (strong, nonatomic) IBOutlet UIButton *finishPlusBTN;
 @property (strong, nonatomic) IBOutlet UIButton *sizePlusBTN;
 
-@property (weak, nonatomic) IBOutlet UISwitch *forwardTestSWT;
-@property (weak, nonatomic) IBOutlet UISwitch *onScreenInfoSWT;
-@property (weak, nonatomic) IBOutlet UISwitch *blockRotateSWT;
-@property (weak, nonatomic) IBOutlet UISwitch *animalsSWT;
-@property (weak, nonatomic) IBOutlet UISwitch *soundsSWT;
+@property (weak, nonatomic) IBOutlet UISwitch   *forwardTestSWT;
+@property (weak, nonatomic) IBOutlet UISwitch   *onScreenInfoSWT;
+@property (weak, nonatomic) IBOutlet UISwitch   *blockRotateSWT;
+@property (weak, nonatomic) IBOutlet UISwitch   *animalsSWT;
+@property (weak, nonatomic) IBOutlet UISwitch   *soundsSWT;
 
 @end
