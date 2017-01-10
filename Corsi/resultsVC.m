@@ -51,16 +51,20 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    UIImage *resultsImage      = [UIImage imageNamed:@"results"];
+    UIImage *resultsImageSel   = [UIImage imageNamed:@"results"];
+    resultsImage               = [resultsImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    resultsImageSel            = [resultsImageSel imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    self.tabBarItem            = [[UITabBarItem alloc] initWithTitle:@"Results" image:resultsImage selectedImage: resultsImageSel];
+
     heading.hidden = NO;
 }
 
--(void)viewDidAppear:(BOOL)animated{
+-(void)viewWillAppear:(BOOL)animated{
+    self.tabBarController.tabBar.hidden = NO;
+}
 
-     UIImage *resultsImage      = [UIImage imageNamed:@"results"];
-     UIImage *resultsImageSel   = [UIImage imageNamed:@"results"];
-     resultsImage               = [resultsImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-     resultsImageSel            = [resultsImageSel imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-     self.tabBarItem            = [[UITabBarItem alloc] initWithTitle:@"Results" image:resultsImage selectedImage: resultsImageSel];
+-(void)viewDidAppear:(BOOL)animated{
     
     mySingleton *singleton = [mySingleton sharedSingleton];
     

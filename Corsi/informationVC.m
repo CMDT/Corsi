@@ -28,13 +28,19 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    self.tabBarController.tabBar.hidden = NO;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
+    UIImage *infoImage           = [UIImage imageNamed:@"information"];
+    UIImage *infoImageSel        = [UIImage imageNamed:@"information"];
+    infoImage                    = [infoImage     imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    infoImageSel                 = [infoImageSel  imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    self.tabBarItem              = [[UITabBarItem alloc] initWithTitle:@"Information" image:infoImage selectedImage: infoImageSel];
+    
     NSString * textContents = @"";
 
     //put some text in the box
@@ -46,14 +52,7 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    
-    UIImage *infoImage           = [UIImage imageNamed:@"information"];
-    UIImage *infoImageSel        = [UIImage imageNamed:@"information"];
-    infoImage                    = [infoImage     imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    infoImageSel                 = [infoImageSel  imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.tabBarItem              = [[UITabBarItem alloc] initWithTitle:@"Information" image:infoImage selectedImage: infoImageSel];
-        
-    //self.tabBarController.tabBar.hidden = NO;
+//
 }
 
 - (void)didReceiveMemoryWarning

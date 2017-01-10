@@ -128,17 +128,11 @@
     emailLBL;
 //subjectLBL;//re instate if work out way to fit on screen space
 
+-(void)viewWillAppear:(BOOL)animated{
+   self.tabBarController.tabBar.hidden = NO;
+}
+
 -(void)viewDidAppear:(BOOL)animated{
-    
-//assign images to tab bar items
-    
-    //try and use default method for images, as some issues with this way of preloading them
-    
-    UIImage *settingsImage          = [UIImage imageNamed:@"settings"];
-    UIImage *settingsImageSel       = [UIImage imageNamed:@"settings"];
-    settingsImage       = [settingsImage    imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    settingsImageSel    = [settingsImageSel imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Settings" image:settingsImage selectedImage: settingsImageSel];
     
     mySingleton *singleton = [mySingleton sharedSingleton];
 
@@ -221,14 +215,19 @@
     
     [self putBlocksInPlace];
     
-    self.tabBarController.tabBar.hidden = NO;
+    //self.tabBarController.tabBar.hidden = NO;
     }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-
+    UIImage *settingsImage          = [UIImage imageNamed:@"settings"];
+    UIImage *settingsImageSel       = [UIImage imageNamed:@"settings"];
+    settingsImage       = [settingsImage    imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    settingsImageSel    = [settingsImageSel imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Settings" image:settingsImage selectedImage: settingsImageSel];
+    
     [self setDefaults];
 }
 
@@ -255,8 +254,8 @@
 //*************************************************************
 //version, set anyway *****************************************
 //*************************************************************
-        version0 =  @"v1.3.1.13.12.16";              // version   *** keep short
-        version1 =  @"MMU (c) 2016";               // copyright *** limited line space
+        version0 =  @"v1.3.3 - 10.1.17";              // version   *** keep short
+        version1 =  @"MMU (c) 2017";               // copyright *** limited line space
         version2 =  @"j.a.howell@mmu.ac.uk";       // author    *** to display on device
         version3 =  @"http://www.ess.mmu.ac.uk";   // web site  *** settings screen
 //*************************************************************************************** check web site address as not working at present

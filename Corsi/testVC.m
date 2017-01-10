@@ -139,9 +139,18 @@
     return self;
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    self.tabBarController.tabBar.hidden = NO;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UIImage *testImage      = [UIImage imageNamed:@"test"];
+    UIImage *testImageSel   = [UIImage imageNamed:@"test"];
+    testImage               = [testImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    testImageSel            = [testImageSel imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    self.tabBarItem         = [[UITabBarItem alloc] initWithTitle:@"Test" image:testImage selectedImage: testImageSel];
     
     stopTestNowBTN.hidden=YES;
     MessageView.hidden=YES;
@@ -167,8 +176,6 @@
     NSURL *mySoundEffectURL=[NSURL fileURLWithPath:mySoundEffectPath];
     AudioServicesCreateSystemSoundID(CFBridgingRetain(mySoundEffectURL),&mySoundEffect);
     
-    self.tabBarController.tabBar.hidden = NO;
-    
     infoShow = singleton.onScreenInfo;
 
     flash2 = 0.25;// flash button when pressed
@@ -182,13 +189,7 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-   
-    UIImage *testImage      = [UIImage imageNamed:@"test"];
-    UIImage *testImageSel   = [UIImage imageNamed:@"test"];
-    testImage               = [testImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    testImageSel            = [testImageSel imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.tabBarItem         = [[UITabBarItem alloc] initWithTitle:@"Test" image:testImage selectedImage: testImageSel];
-    
+      
     [self hideInfo];
     MessageTextView.hidden=YES;
     startBTN.hidden   = NO;
@@ -1666,7 +1667,7 @@
         MessageView.hidden=NO;
         isCalculating=YES;
     
-        self.tabBarController.tabBar.hidden = NO;
+        //self.tabBarController.tabBar.hidden = NO;
     
         [self animateMessageViewIN];
         [MessageView setImage: card[6].image];
@@ -1723,7 +1724,7 @@
                     }];
     //settings VC jump
     
-    self.tabBarController.tabBar.hidden = NO;
+    //self.tabBarController.tabBar.hidden = NO;
 }
 
 -(void)blankMSG3 {

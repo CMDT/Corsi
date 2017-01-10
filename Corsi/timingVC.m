@@ -119,8 +119,8 @@ blockWaitTimeTXT.text=[NSString stringWithFormat:@"%0.0f", (float)temp];
     timeMessageTXT.textAlignment = NSTextAlignmentCenter;
 
     startTime = singleton.startTime;
-    waitTime = singleton.waitTime;
-    showTime = singleton.showTime;
+    waitTime  = singleton.waitTime;
+    showTime  = singleton.showTime;
 
     blockStartDelaySLD.value = startTime;
     blockWaitTimeSLD.value = waitTime;
