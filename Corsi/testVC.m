@@ -139,18 +139,35 @@
     return self;
 }
 
+//-(id)initWithCoder:(NSCoder *)aDecoder {
+    //self = [super initWithCoder:aDecoder];
+    //if (self) {
+        //UIImage *tabIn  = [UIImage imageNamed:@"test"];
+        //UIImage *tabOut = [UIImage imageNamed:@"test"];
+        //UITabBarItem *tabBarItem = [self tabBarItem];
+        ///[tabBarItem initWithTitle:@"Test" image:tabIn tag:0];
+    //}
+    //return self;
+//}
+
+
 -(void)viewWillAppear:(BOOL)animated{
     self.tabBarController.tabBar.hidden = NO;
 }
-
+-(void)awakeFromNib{
+    [super awakeFromNib];
+    UIImage *testImage      = [UIImage imageNamed:@"test"];
+    UIImage *testImageSel   = [UIImage imageNamed:@"test"];
+    //testImage               = [testImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    //testImageSel            = [testImageSel imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    //testImage               = [testImage imageWithRenderingMode:UIImageRenderingModeAutomatic];
+    //testImageSel            = [testImageSel imageWithRenderingMode:UIImageRenderingModeAutomatic];
+    self.tabBarItem         = [[UITabBarItem alloc] initWithTitle:@"Test" image:testImage selectedImage: testImageSel];
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIImage *testImage      = [UIImage imageNamed:@"test"];
-    UIImage *testImageSel   = [UIImage imageNamed:@"test"];
-    testImage               = [testImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    testImageSel            = [testImageSel imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.tabBarItem         = [[UITabBarItem alloc] initWithTitle:@"Test" image:testImage selectedImage: testImageSel];
+
     
     stopTestNowBTN.hidden=YES;
     MessageView.hidden=YES;

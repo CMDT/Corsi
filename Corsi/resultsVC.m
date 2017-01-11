@@ -46,16 +46,29 @@
     }
     return self;
 }
+//-(id)initWithCoder:(NSCoder *)aDecoder {
+//    self = [super initWithCoder:aDecoder];
+//    if (self) {
+//        UIImage *tabIn  = [UIImage imageNamed:@"results"];
+//        UIImage *tabOut = [UIImage imageNamed:@"results"];
+//        UITabBarItem *tabBarItem = [self tabBarItem];
+//        [tabBarItem initWithTitle:@"results" image:tabIn tag:0];
+//    }
+//    return self;
+//}
+-(void)awakeFromNib{
+    [super awakeFromNib];
+    UIImage *resultsImage      = [UIImage imageNamed:@"results"];
+    UIImage *resultsImageSel   = [UIImage imageNamed:@"results"];
+    //resultsImage               = [resultsImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    //resultsImageSel            = [resultsImageSel imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    self.tabBarItem            = [[UITabBarItem alloc] initWithTitle:@"Results" image:resultsImage selectedImage: resultsImageSel];
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    UIImage *resultsImage      = [UIImage imageNamed:@"results"];
-    UIImage *resultsImageSel   = [UIImage imageNamed:@"results"];
-    resultsImage               = [resultsImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    resultsImageSel            = [resultsImageSel imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.tabBarItem            = [[UITabBarItem alloc] initWithTitle:@"Results" image:resultsImage selectedImage: resultsImageSel];
 
     heading.hidden = NO;
 }
@@ -191,6 +204,8 @@
         return b;
     }
 }
+
+-(void)v
 
 - (UITableViewCell *)tableView:(UITableView *)tableView1 cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {

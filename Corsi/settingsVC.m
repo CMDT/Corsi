@@ -128,6 +128,27 @@
     emailLBL;
 //subjectLBL;//re instate if work out way to fit on screen space
 
+
+//-(id)initWithCoder:(NSCoder *)aDecoder {
+//    self = [super initWithCoder:aDecoder];
+//    if (self) {
+//        UIImage *tabIn  = [UIImage imageNamed:@"settings"];
+//        UIImage *tabOut = [UIImage imageNamed:@"settings"];
+//        UITabBarItem *tabBarItem = [self tabBarItem];
+//        [tabBarItem initWithTitle:@"Settings" image:tabIn tag:0];
+//    }
+//    return self;
+//}
+
+-(void)awakeFromNib{
+    [super awakeFromNib];
+    UIImage *settingsImage          = [UIImage imageNamed:@"settings"];
+    UIImage *settingsImageSel       = [UIImage imageNamed:@"settings"];
+    //settingsImage       = [settingsImage    imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    //settingsImageSel    = [settingsImageSel imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Settings" image:settingsImage selectedImage: settingsImageSel];
+}
+
 -(void)viewWillAppear:(BOOL)animated{
    self.tabBarController.tabBar.hidden = NO;
 }
@@ -222,11 +243,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    UIImage *settingsImage          = [UIImage imageNamed:@"settings"];
-    UIImage *settingsImageSel       = [UIImage imageNamed:@"settings"];
-    settingsImage       = [settingsImage    imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    settingsImageSel    = [settingsImageSel imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Settings" image:settingsImage selectedImage: settingsImageSel];
     
     [self setDefaults];
 }

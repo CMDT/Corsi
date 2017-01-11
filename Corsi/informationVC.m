@@ -26,20 +26,36 @@
     }
     return self;
 }
+//-(id)initWithCoder:(NSCoder *)aDecoder {
+//    self = [super initWithCoder:aDecoder];
+//    if (self) {
+//        UIImage *tabIn  = [UIImage imageNamed:@"information"];
+//        UIImage *tabOut = [UIImage imageNamed:@"infomation"];
+//        UITabBarItem *tabBarItem = [self tabBarItem];
+//        [tabBarItem initWithTitle:@"Information" image:tabIn tag:0];
+//    }
+//    return self;
+//}
+
 
 -(void)viewWillAppear:(BOOL)animated{
     self.tabBarController.tabBar.hidden = NO;
+}
+
+-(void)awakeFromNib{
+    [super awakeFromNib];
+    UIImage *infoImage           = [UIImage imageNamed:@"information"];
+    UIImage *infoImageSel        = [UIImage imageNamed:@"information"];
+    //infoImage                    = [infoImage     imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    //infoImageSel                 = [infoImageSel  imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    self.tabBarItem              = [[UITabBarItem alloc] initWithTitle:@"Information" image:infoImage selectedImage: infoImageSel];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    UIImage *infoImage           = [UIImage imageNamed:@"information"];
-    UIImage *infoImageSel        = [UIImage imageNamed:@"information"];
-    infoImage                    = [infoImage     imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    infoImageSel                 = [infoImageSel  imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.tabBarItem              = [[UITabBarItem alloc] initWithTitle:@"Information" image:infoImage selectedImage: infoImageSel];
+
     
     NSString * textContents = @"";
 

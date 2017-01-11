@@ -15,5 +15,5 @@
 }
 
 @property (nonatomic,retain) IBOutlet UITextView *infoTextView;
-
+//
 @end
