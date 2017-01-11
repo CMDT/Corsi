@@ -205,8 +205,6 @@
     }
 }
 
--(void)v
-
 - (UITableViewCell *)tableView:(UITableView *)tableView1 cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     mySingleton *singleton = [mySingleton sharedSingleton];
