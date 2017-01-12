@@ -39,15 +39,6 @@
     arrItems //  temp array of itmes for results display
 ;
 
-//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-//{
-//    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-//    if (self) {
-        // Custom initialization
-//    }
-//    return self;
-//}
-
 -(void)awakeFromNib{
     [super awakeFromNib];
     UIImage *resultsImage      = [UIImage imageNamed:@"results"];
@@ -210,7 +201,6 @@
     //[resultLab setFont: [UIFont fontWithName:@"Arial" size:9.0]];
     
     return cell;
-    
 /*
  //example of label and button populating a cell
  - (UITableViewCell *)tableView: (UITableView *)tableView cellForRowAtIndexPath: (NSIndexPath *)indexPath { 
