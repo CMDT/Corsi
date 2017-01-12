@@ -154,6 +154,11 @@
 -(void)viewWillAppear:(BOOL)animated{
     self.tabBarController.tabBar.hidden = NO;
 }
+
+-(void)viewWillDisappear:(BOOL)animated{
+    self.tabBarController.tabBar.hidden = NO;
+}
+
 -(void)awakeFromNib{
     [super awakeFromNib];
     UIImage *testImage      = [UIImage imageNamed:@"test"];
@@ -755,7 +760,7 @@
 
 //halt here, user selects new menu option to proceed
     //[MessageView setImage: card[7].image]; //hold message if not faded out (set animate out to hold for this one if needed
-    [NSTimer scheduledTimerWithTimeInterval:3.5 target:self selector:@selector(abortWasPressed) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(abortWasPressed) userInfo:nil repeats:NO];
 }
 
 -(void)abortWasPressed{
@@ -2096,15 +2101,15 @@
     [singleton.displayStringRows addObject: tempString ];//data
 
     //line
-    tempString=@"";
+    tempString = @"";
     [singleton.resultStringRows addObject:tempString];//csv
 
     //line
-    tempString=@"(1 = correct number in correct sequence, 0 = wrong number in sequence)";
+    tempString = @"(1 = correct number in correct sequence, 0 = wrong number in sequence)";
     [singleton.resultStringRows addObject:tempString];//csv
-    tempString=@"1 = Correct, 0 = Wrong";
+    tempString = @"1 = Correct, 0 = Wrong";
     [singleton.displayStringTitles addObject:tempString ];//title
-    tempString=@"";
+    tempString = @"";
     [singleton.displayStringRows addObject:tempString];//data
 
     //line
@@ -2112,21 +2117,21 @@
     [singleton.resultStringRows addObject:tempString];
 
         //line
-    tempString=@"Test No,Sequence,Response,1,2,3,4,5,6,7,8,9,Correct,Wrong";
-    tempString2=@"Test:123456789_CW";
+    tempString  = @"Test No,Sequence,Response,1,2,3,4,5,6,7,8,9,Correct,Wrong";
+    tempString2 = @"Test:123456789_CW";
     [singleton.resultStringRows addObject:tempString];
 
     //body of results
     //reset tempstring before building a line of data
-    tempString=@"";
-    tempString2=@"  ";
+    tempString  = @"";
+    tempString2 = @"  ";
 
     //loop for test no
     for (int xx=start; xx<finish+1; xx++) {
         //for stage no
     //add a few blanks to the strings to enable it to run over the 9 chars
-            order[xx]=[order[xx] stringByAppendingString:@"xxx"];
-            guessStr[xx]=[guessStr[xx] stringByAppendingString:@"xxx"];
+            order[xx]   = [order[xx]    stringByAppendingString:@"xxx"];
+            guessStr[xx]= [guessStr[xx] stringByAppendingString:@"xxx"];
         //for order and guess
 
         tempString3 = [NSString stringWithFormat:@"%d", xx-2];
@@ -2134,12 +2139,12 @@
         ee=[order[xx] substringWithRange:NSMakeRange(0, xx)];
         ff=[guessStr[xx] substringWithRange:NSMakeRange(0, xx)];
 
-        tempString = [NSString stringWithFormat:@"%@,%@,%@", tempString3, ee, ff];
+        tempString  = [NSString stringWithFormat:@"%@,%@,%@", tempString3, ee, ff];
         tempString2 = [NSString stringWithFormat:@"%@:%@-%@",tempString3, ee, ff];
 
         tempString3=@"No:Ord:Test";
         [singleton.displayStringTitles addObject:tempString3];//title
-        [singleton.displayStringRows addObject: tempString2];//data
+        [singleton.displayStringRows   addObject: tempString2];//data
 
         tempString2=@"";
 
@@ -2160,15 +2165,15 @@
             
             //check for same digits in order and guess and count
             if ([ee isEqualToString: ff]) {
-                cor  = cor + 1;
-                totcor=totcor + 1;
-                ans  = @"1";
-                ans2 = @"1";
+                cor    = cor + 1;
+                totcor = totcor + 1;
+                ans    = @"1";
+                ans2   = @"1";
             }else{
-                wro  = wro+1;
-                totwro=totwro + 1;
-                ans  = @"0";
-                ans2 = @"0";
+                wro    = wro+1;
+                totwro = totwro + 1;
+                ans    = @"0";
+                ans2   = @"0";
             }
             //put the individual components csv in string
             tempString  = [NSString stringWithFormat:@"%@%@", tempString, [NSString stringWithFormat:@",%@", ans]];
@@ -2191,8 +2196,8 @@
         //[singleton.displayStringRows addObject: @""];//data
         tempString3 = @"DATA:";
         [singleton.displayStringTitles addObject:tempString3 ];//title
-        [singleton.displayStringRows addObject: tempString2];//data
-        [singleton.resultStringRows addObject:tempString];//csv
+        [singleton.displayStringRows   addObject: tempString2];//data
+        [singleton.resultStringRows    addObject:tempString];//csv
 
 
     }
@@ -2396,7 +2401,7 @@
     [singleton.displayStringRows addObject: @""];//data
 
     //line
-    tempString=@"(c) MMU 2016 ESS";
+    tempString=@"(c) MMU 2017 ESS";
     [singleton.displayStringTitles addObject:tempString ]; //title
     [singleton.resultStringRows addObject:tempString]; //csv
     [singleton.displayStringRows addObject:@""]; //data
@@ -2414,7 +2419,7 @@
     [singleton.displayStringRows addObject: tempString]; //data
        
     // Flag that the data can be placed in the table as is ready
-    singleton.dataReady=YES;
+    singleton.dataReady = YES;
         
     //jump to the results page
     [NSTimer scheduledTimerWithTimeInterval: 0 target:self selector:@selector(jumpToResultsView) userInfo:nil repeats:NO];

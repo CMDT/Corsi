@@ -448,38 +448,38 @@
 			<key>Key</key>
 			<string>version0</string>
 			<key>DefaultValue</key>
-			<string>1.0.0.24.11.14</string>
+			<string>1.3.4 -12.1.17</string>
 		</dict>
-        <dict>
-            <key>Type</key>
-            <string>PSTitleValueSpecifier</string>
-            <key>Title</key>
-            <string>Copyright:</string>
-            <key>Key</key>
-            <string>version1</string>
-            <key>DefaultValue</key>
-            <string>MMU (c) 2014</string>
-        </dict>
-        <dict>
-            <key>Type</key>
-            <string>PSTitleValueSpecifier</string>
-            <key>Title</key>
-            <string>Author:</string>
-            <key>Key</key>
-            <string>version2</string>
-            <key>DefaultValue</key>
-            <string>j.a.howell@mmu.ac.uk</string>
-        </dict>
-        <dict>
-            <key>Type</key>
-            <string>PSTitleValueSpecifier</string>
-            <key>Title</key>
-            <string>Web:</string>
-            <key>Key</key>
-            <string>version3</string>
-            <key>DefaultValue</key>
-            <string>http://www.mmu.ac.uk</string>
-        </dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>Copyright:</string>
+			<key>Key</key>
+			<string>version1</string>
+			<key>DefaultValue</key>
+			<string>MMU (c) 2017</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>Author:</string>
+			<key>Key</key>
+			<string>version2</string>
+			<key>DefaultValue</key>
+			<string>j.a.howell@mmu.ac.uk</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>Web:</string>
+			<key>Key</key>
+			<string>version3</string>
+			<key>DefaultValue</key>
+			<string>http://www.mmu.ac.uk</string>
+		</dict>
 	</array>
 	<key>StringsTable</key>
 	<string>Root</string>

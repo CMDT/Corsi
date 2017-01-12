@@ -33,29 +33,21 @@
     filename,
     filepath,
     emailBTN,
+    scrollLBL,
     tableView,
     heading,
     arrItems //  temp array of itmes for results display
 ;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-//-(id)initWithCoder:(NSCoder *)aDecoder {
-//    self = [super initWithCoder:aDecoder];
+//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+//{
+//    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 //    if (self) {
-//        UIImage *tabIn  = [UIImage imageNamed:@"results"];
-//        UIImage *tabOut = [UIImage imageNamed:@"results"];
-//        UITabBarItem *tabBarItem = [self tabBarItem];
-//        [tabBarItem initWithTitle:@"results" image:tabIn tag:0];
+        // Custom initialization
 //    }
 //    return self;
 //}
+
 -(void)awakeFromNib{
     [super awakeFromNib];
     UIImage *resultsImage      = [UIImage imageNamed:@"results"];
@@ -69,38 +61,41 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
-    heading.hidden = NO;
-}
-
--(void)viewWillAppear:(BOOL)animated{
-    self.tabBarController.tabBar.hidden = NO;
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    
     mySingleton *singleton = [mySingleton sharedSingleton];
     
 //hide and show data and titles according to if data present
-    tableView.hidden      = YES;
-    emailBTN.hidden       = YES;
-    resultsTxtView.hidden = NO;
-    heading.hidden        = NO;
+    self.tabBarController.tabBar.hidden = NO;
+    self.emailBTN.hidden                = YES;
+    self.heading.hidden                 = NO;
     
-    if(singleton.dataReady==NO){ //flag that there is no data to display yet
+    
+    if (singleton.dataReady   == YES) {
+        resultsTempString      = @"";
+        emailBTN.hidden        = NO;
+        emailBTN.alpha         = 1.0;
+        tableView.hidden       = NO;
+        resultsTxtView.hidden  = YES;
+        scrollLBL.hidden       = YES;
+    }else{
+        tableView.hidden       = YES;
+        emailBTN.hidden        = YES;
+        resultsTxtView.hidden  = NO;
+        scrollLBL.hidden       = NO;
+        
         //clear arrays for results strings
-        [singleton.resultStringRows removeAllObjects];
-        [singleton.displayStringRows removeAllObjects];
+        [singleton.resultStringRows    removeAllObjects];
+        [singleton.displayStringRows   removeAllObjects];
         [singleton.displayStringTitles removeAllObjects];
         
         //clear output strings
-        singleton.resultStrings = @"";
-        singleton.displayStrings= @"";
+        singleton.resultStrings  = @"";
+        singleton.displayStrings = @"";
+        
+            resultsTempString = @"\n\nThe Corsi Block Tapping Test results and analysis will appear in a table here, once a test has been completed.\n\nTest results will stay visible until a new test is finished, or you press the Home Button on your device.\n\nPressing the home button deletes all unsent email data and resets the Application.\n\nData viewed on screen can be sent by Email as a text file attachment of type CSV, which can be read by many other applications such as a spreadsheets.\n\nPlease ensure that you have correctly set the receiving Email Address.\n\nThe data sent by Email contains reaction timing information not shown on this screen.";
     }
-    
-    //self.tabBarController.tabBar.hidden = NO;
-
-    resultsTempString = @"\n\nThe Corsi Block Tapping Test results and analysis will appear in a table here, once a test has been completed.\n\nTest results will stay visible until a new test is finished, or you press the Home Button on your device.\n\nPressing the home button deletes all unsent email data and resets the Application.\n\nData viewed on screen can be sent by Email as a text file attachment of type CSV, which can be read by many other applications such as a spreadsheets.\n\nPlease ensure that you have correctly set the receiving Email Address.\n\nThe data sent by Email contains reaction timing information not shown on this screen.";
     
     //resultsTxtView.font=[UIFont fontWithName:@"Serifa-Roman" size:16];
     resultsTxtView.text = resultsTempString;
@@ -154,28 +149,12 @@
     //NSLog(@"/n/n *** Display data was ***:%@", printString2);
     //NSLog(@"/n/n *** Data Ready Flag =:%i ***", singleton.dataReady);
     
-    if (singleton.dataReady == NO) { //test for data, is there some to display
-        //no data yet
-        resultsTxtView.text  = resultsTempString; // info message displayed
-        tableView.hidden=YES;
-        emailBTN.hidden=YES;
-        resultsTxtView.hidden=NO;
-    }else{
-        //there is data
-        //resultsTxtView.text  = singleton.displayStrings; //table of data displayed
-        resultsTxtView.text  = printString; //table of data displayed
-        tableView.hidden=NO;
-        emailBTN.hidden=NO;
-        resultsTxtView.hidden=YES;
-    }
-    //[self saveText];
-    if (![printString isEqualToString: @""]) {
-    //if (singleton.dataReady == YES) {
-        [self WriteToStringFile:[printString mutableCopy]];
-    }
     [tableView reloadData];
     
-    //self.tabBarController.tabBar.hidden = NO;
+    //[self saveText];
+    if (![printString isEqualToString: @""]) {
+        [self WriteToStringFile:[printString mutableCopy]];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -285,9 +264,9 @@ forRowAtIndexPath: (NSIndexPath*)indexPath
         
         titleLab.textAlignment=NSTextAlignmentLeft;
         if ([resultLab.text isEqualToString: @""]) {
-            resultLab.hidden=YES;
+            resultLab.hidden = YES;
         }else{
-            resultLab.hidden=NO;
+            resultLab.hidden = NO;
         }
     }
 }

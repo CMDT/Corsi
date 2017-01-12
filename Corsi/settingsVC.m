@@ -147,6 +147,8 @@
     //settingsImage       = [settingsImage    imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     //settingsImageSel    = [settingsImageSel imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Settings" image:settingsImage selectedImage: settingsImageSel];
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    singleton.dataReady=NO;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -396,8 +398,6 @@
         forward =  YES;
         [defaults setBool:YES forKey:kForward];
     }
-
-    
 }
 
 -(UIColor*)colourPicker:(NSString*)colourName{

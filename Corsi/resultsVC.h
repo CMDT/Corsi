@@ -30,6 +30,7 @@ IBOutlet UITextView    * resultsTxtView;
     UILabel         * timelbl;
     UIButton        * emailBTN;
     UILabel         * subjectlbl;
+    UILabel         * scrolllbl;
 }
 
 //file ops stuff
@@ -47,6 +48,7 @@ IBOutlet UITextView    * resultsTxtView;
 @property (nonatomic, strong) UITextView           * resultsTxtView;
 @property (strong, nonatomic) IBOutlet UITableView * tableView;
 @property (strong, nonatomic) IBOutlet UILabel     * heading;
+@property (strong, nonatomic) IBOutlet UILabel     * scrollLBL;
 
 //array for table - test only
 @property (nonatomic,strong) NSMutableArray *arrItems;
