@@ -1935,7 +1935,7 @@
     [singleton.displayStringRows addObject: @""];//data
         
     //blank
-    tempString=@"";
+    tempString = @"";
     [singleton.resultStringRows addObject:tempString];//csv
 
     tempString  = @"Date:";
@@ -1944,16 +1944,16 @@
     [singleton.displayStringRows addObject: tempString2];//data
 
     tempString  = @"Time:";
-    tempString2=singleton.testTime;
+    tempString2 = singleton.testTime;
     [singleton.displayStringTitles addObject:tempString ];//title
     [singleton.displayStringRows addObject: tempString2];//data
 
-    tempString=[NSString stringWithFormat:@"Date: %@", singleton.testDate];//csv
+    tempString = [NSString stringWithFormat:@"Date: %@", singleton.testDate];//csv
     [singleton.resultStringRows addObject:tempString];
-    tempString=[NSString stringWithFormat:@"Time: %@", singleton.testTime];//csv
+    tempString = [NSString stringWithFormat:@"Time: %@", singleton.testTime];//csv
     [singleton.resultStringRows addObject:tempString];
 
-    tempString=@"";
+    tempString = @"";
     [singleton.resultStringRows addObject:tempString];//csv
 
         tempString4 = @"Tester:";
@@ -2195,9 +2195,9 @@
         //[singleton.displayStringTitles addObject:tempString4];//title
         //[singleton.displayStringRows addObject: @""];//data
         tempString3 = @"DATA:";
-        [singleton.displayStringTitles addObject:tempString3 ];//title
-        [singleton.displayStringRows   addObject: tempString2];//data
-        [singleton.resultStringRows    addObject:tempString];//csv
+        [singleton.displayStringTitles addObject: tempString3 ];//title
+        [singleton.displayStringRows   addObject: tempString2]; //data
+        [singleton.resultStringRows    addObject: tempString];  //csv
 
 
     }
@@ -2207,8 +2207,8 @@
         
         //nb arrays and vars zeroed in boxinit before timings start.
         
-        //NSLog(@"Timings follow");
-        //NSLog(@"--------------");
+        NSLog(@"Timings follow");
+        NSLog(@"--------------");
         
         //check timing data is within limits and set max/mins if extended.  Crash possible if very long times get through.
         Float32 react=0.00;
@@ -2239,7 +2239,7 @@
         totalReactionTime = 0.00;
         
         //do the timings output to csv
-        tempString=[NSString stringWithFormat:@"Timings Output"];
+        tempString=[NSString stringWithFormat:@"Timings Output,,,Blocks,,,,,,,,,Minus 1st Reaction,,,All Reaction Timings"];
         [singleton.resultStringRows addObject:tempString];//csv
         
         tempString=@"Test No,,,1,2,3,4,5,6,7,8,9,Total-1,Min-1,Max-1,Average-1,,TotalT,MinT,MaxT,Average-T";
@@ -2248,7 +2248,9 @@
         for (int aa = start; aa < finish+1; aa++) {
             
             firstPress = fabsf(reactionTime[aa][0]);
-            testReactionTime[aa] = 0.00;
+            testReactionTime[aa]     = 0.00;
+            shortestReactionTime[aa] = 9999999;
+            longestReactionTime[aa]  = -9999999;
             
             tempString=[NSString stringWithFormat:@"%d,,", aa-2];
             
@@ -2269,7 +2271,7 @@
                 
                 //min
                 if ((shortestReactionTime[aa] > fabsf(actualReactionTime[aa][bb])) && (bb > 0)) {
-                    shortestReactionTime[aa] = fabsf(actualReactionTime[aa][bb]);
+                     shortestReactionTime[aa] = fabsf(actualReactionTime[aa][bb]);
                 }
      
                 //max
@@ -2282,11 +2284,11 @@
                 if (bb == 0) {
                     //tempString = [NSString stringWithFormat:@"%@%@", tempString, [NSString stringWithFormat:@",%.0f", reactionTime[aa][0]]];
                     tempString = [NSString stringWithFormat:@"%@%@", tempString, [NSString stringWithFormat:@",%.0f", reactionTime[aa][0]]];
-                    NSLog(@"reaction time:            r-%.0f mS", reactionTime[aa][bb]);
+                    NSLog(@"reaction time:            r0-%.0f mS", reactionTime[aa][bb]);
                 }else{
                     //tempString = [NSString stringWithFormat:@"%@%@", tempString, [NSString stringWithFormat:@",%.0f", reactionTime[aa][0]]];
-                    tempString = [NSString stringWithFormat:@"%@%@", tempString, [NSString stringWithFormat:@",%.0f", reactionTime[aa][0]]];
-                    NSLog(@"reaction time:            r-%.0f mS aa=%d bb=%d", actualReactionTime[aa][bb],aa,bb);
+                    tempString = [NSString stringWithFormat:@"%@%@", tempString, [NSString stringWithFormat:@",%.0f", actualReactionTime[aa][bb]]];
+                    NSLog(@"reaction time:            r1-%.0f mS aa=%d bb=%d", actualReactionTime[aa][bb],aa,bb);
                 }
                 NSLog(@"cumulative reaction time: c-%.0f mS", reactionTime[aa][bb]);
             
@@ -2301,22 +2303,24 @@
             averageReactionTime[aa] = fabsf(testReactionTime[aa] / (Float32)(aa-1));
             
             //stage end totals
-            tempString = [NSString stringWithFormat:@"%@%@", tempString, [NSString stringWithFormat:@",%.0f", testReactionTime[aa]]];
-            tempString = [NSString stringWithFormat:@"%@%@", tempString, [NSString stringWithFormat:@",%.0f", shortestReactionTime[aa]]];
-            tempString = [NSString stringWithFormat:@"%@%@", tempString, [NSString stringWithFormat:@",%.0f", longestReactionTime[aa]]];
+            tempString = [NSString stringWithFormat:@"%@%@", tempString, [NSString stringWithFormat:@",%.0f",  testReactionTime[aa]]];
+            tempString = [NSString stringWithFormat:@"%@%@", tempString, [NSString stringWithFormat:@",%.0f",  shortestReactionTime[aa]]];
+            tempString = [NSString stringWithFormat:@"%@%@", tempString, [NSString stringWithFormat:@",%.0f",  longestReactionTime[aa]]];
             tempString = [NSString stringWithFormat:@"%@%@", tempString, [NSString stringWithFormat:@",%.0f,", averageReactionTime[aa]]];
             
+            //just check is the first reaction was short or long against the already stored ones
             if (longestReactionTime[aa] < fabsf(reactionTime[aa][0])) {
                 longestReactionTime[aa] = fabsf(reactionTime[aa][0]);
             }
             if (shortestReactionTime[aa] > fabsf(reactionTime[aa][0])){
                 shortestReactionTime[aa] = fabsf(reactionTime[aa][0]);
             }
+            
             tempString = [NSString stringWithFormat:@"%@%@", tempString, [NSString stringWithFormat:@",%.0f", testReactionTime[aa]+reactionTime[aa][0]]];
             tempString = [NSString stringWithFormat:@"%@%@", tempString, [NSString stringWithFormat:@",%.0f", shortestReactionTime[aa]]];
-            tempString = [NSString stringWithFormat:@"%@%@", tempString, [NSString stringWithFormat:@",%.0f", longestReactionTime[aa]]];
+            tempString4 = [NSString stringWithFormat:@"%@%@", tempString, [NSString stringWithFormat:@",%.0f", longestReactionTime[aa]]];
             
-            [singleton.resultStringRows addObject:tempString];//csv
+            //[singleton.resultStringRows addObject:tempString4];//csv
             
             //add 1st reaction
             testReactionTime[aa] = fabsf(testReactionTime[aa] + reactionTime[aa][0]);
@@ -2328,9 +2332,9 @@
             
             //avg
             averageReactionTime[aa] = fabsf(testReactionTime[aa] / (Float32)aa);
-            tempString = [NSString stringWithFormat:@"%@%@", tempString, [NSString stringWithFormat:@",%.0f", averageReactionTime[aa]]];
+            tempString4 = [NSString stringWithFormat:@"%@%@", tempString4, [NSString stringWithFormat:@",%.0f", averageReactionTime[aa]]];
             
-            //[singleton.resultStringRows addObject:tempString];//csv
+            [singleton.resultStringRows addObject:tempString4];//csv
             //[singleton.displayStringRows addObject:tempString];// not in screen display, too complexdata - temporary ****************** remove later 18/1/17
             
             tempString=@"Average Reaction Time";
