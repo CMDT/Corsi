@@ -57,7 +57,7 @@ static mySingleton * sharedSingleton = nil;
 #pragma mark Singleton Methods
 
 + (mySingleton *) sharedSingleton {
-    if(sharedSingleton==nil) {
+    if(sharedSingleton  == nil) {
         sharedSingleton = [[super allocWithZone:NULL]init];
     }
     return sharedSingleton;

@@ -46,12 +46,14 @@
     //resultsImage               = [resultsImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     //resultsImageSel            = [resultsImageSel imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     self.tabBarItem            = [[UITabBarItem alloc] initWithTitle:@"Results" image:resultsImage selectedImage: resultsImageSel];
+    self.scrollLBL.hidden      = YES;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.scrollLBL.hidden      = YES;
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -61,6 +63,7 @@
     self.tabBarController.tabBar.hidden = NO;
     self.emailBTN.hidden                = YES;
     self.heading.hidden                 = NO;
+    self.scrollLBL.hidden               = YES;
     
     
     if (singleton.dataReady   == YES) {
@@ -165,8 +168,8 @@
     mySingleton *singleton = [mySingleton sharedSingleton];
     // Return the number of rows in the section.
     //return [arrItems count];
-    long a=[singleton.displayStringRows count];
-    long b=[singleton.displayStringTitles count];
+    long a = [singleton.displayStringRows count];
+    long b = [singleton.displayStringTitles count];
     //to stop exceeding past array bounds
     if (a<b) {
         return a;
@@ -429,6 +432,7 @@ forRowAtIndexPath: (NSIndexPath*)indexPath
     
     // Add attachment
     [mc addAttachmentData:fileData mimeType:mimeType fileName:filename];
+    
     // Present mail view controller on screen
     [self presentViewController:mc animated:YES completion:NULL];
     //NSLog(@"Finished Email");
