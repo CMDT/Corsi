@@ -455,7 +455,7 @@
     //NSString * testerEmail =[[alertView textFieldAtIndex:0] text];
 
     NSString * participant=@"none";
-    participant=[[alertView textFieldAtIndex:0] text];//used to be 1 for dual entry, 0 for single
+    participant = [[alertView textFieldAtIndex:0] text];//used to be 1 for dual entry, 0 for single
         //NSLog(@"Tester Email    : %@", testerEmail);
         //NSLog(@"Participant     : %@", participant);
 
@@ -471,7 +471,7 @@
     //email name
         //[defaults setObject:testerEmail forKey:kEmail];
     //subject name
-    if (participant==nil||[participant isEqualToString:@""]) {
+    if (participant == nil||[participant isEqualToString:@""]) {
         singleton.oldSubjectName = [singleton.subjectName stringByAppendingString: [NSString stringWithFormat:@"_%@",[self getCurrentDateTimeAsNSString]]];
         //no name was input, use the old one
     }else{
@@ -2207,8 +2207,8 @@
         
         //nb arrays and vars zeroed in boxinit before timings start.
         
-        NSLog(@"Timings follow");
-        NSLog(@"--------------");
+        //NSLog(@"Timings follow");
+        //NSLog(@"--------------");
         
         //check timing data is within limits and set max/mins if extended.  Crash possible if very long times get through.
         Float32 react=0.00;
@@ -2255,7 +2255,7 @@
             tempString=[NSString stringWithFormat:@"%d,,", aa-2];
             
             for (int bb = 0; bb < aa; bb++) {
-                NSLog(@"reaction time:%d-%d-%f",aa,bb,reactionTime[aa][bb]);
+                //NSLog(@"reaction time:%d-%d-%f",aa,bb,reactionTime[aa][bb]);
                 //total time
                 if (bb == 0) {
                     cc = 0;
@@ -2284,13 +2284,13 @@
                 if (bb == 0) {
                     //tempString = [NSString stringWithFormat:@"%@%@", tempString, [NSString stringWithFormat:@",%.0f", reactionTime[aa][0]]];
                     tempString = [NSString stringWithFormat:@"%@%@", tempString, [NSString stringWithFormat:@",%.0f", reactionTime[aa][0]]];
-                    NSLog(@"reaction time:            r0-%.0f mS", reactionTime[aa][bb]);
+                    //NSLog(@"reaction time:            r0-%.0f mS", reactionTime[aa][bb]);
                 }else{
                     //tempString = [NSString stringWithFormat:@"%@%@", tempString, [NSString stringWithFormat:@",%.0f", reactionTime[aa][0]]];
                     tempString = [NSString stringWithFormat:@"%@%@", tempString, [NSString stringWithFormat:@",%.0f", actualReactionTime[aa][bb]]];
-                    NSLog(@"reaction time:            r1-%.0f mS aa=%d bb=%d", actualReactionTime[aa][bb],aa,bb);
+                    //NSLog(@"reaction time:            r1-%.0f mS aa=%d bb=%d", actualReactionTime[aa][bb],aa,bb);
                 }
-                NSLog(@"cumulative reaction time: c-%.0f mS", reactionTime[aa][bb]);
+                //NSLog(@"cumulative reaction time: c-%.0f mS", reactionTime[aa][bb]);
             
             }
             //add some commas
