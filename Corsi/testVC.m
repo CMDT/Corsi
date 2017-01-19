@@ -1890,6 +1890,11 @@
     NSString * ff;
 
     //headers
+        //to add a quote to a string do this
+        //NSString *newOutput = [NSString stringWithFormat:@"\"%@\" = \"%@\"", @"foo", @"bar"]; //using /"
+        
+        //to input a formula, do this
+        //newOutput = [NSString stringWithFormat:@"=sum(d27:e27)\n"]; //nb end of string terminated with \n newline
     //line
     tempString = @"Corsi Block Tapping Test Results";
     [singleton.resultStringRows addObject: tempString];//csv
@@ -1954,7 +1959,7 @@
         [singleton.displayStringRows addObject: tempString2];//data
         
         tempString4=@"Show Time";
-        tempString=[NSString stringWithFormat:@"   Show Time:, %.0f, mS",singleton.showTime];
+        tempString=[NSString stringWithFormat:@"Show Time:, %.0f, mS",singleton.showTime];
         [singleton.resultStringRows addObject:tempString];
         [singleton.displayStringTitles addObject:tempString4 ];//title
         tempString=[NSString stringWithFormat:@"%.0f ms", singleton.showTime];
@@ -2067,7 +2072,7 @@
     [singleton.resultStringRows addObject:tempString];//csv
 
     //line
-    tempString = @"(1 = correct number in correct sequence, 0 = wrong number in sequence)";
+    tempString = @"(1 = correct block in correct sequence, 0 = wrong block in sequence)";
     [singleton.resultStringRows addObject:tempString];//csv
     tempString = @"1 = Correct, 0 = Wrong";
     [singleton.displayStringTitles addObject:tempString ];//title
@@ -2105,7 +2110,7 @@
         ee = [order[xx] substringWithRange:NSMakeRange(0, xx)];
         ff = [guessStr[xx] substringWithRange:NSMakeRange(0, xx)];
 
-        tempString  = [NSString stringWithFormat:@"%@,s %@,r %@", tempString3, ee, ff]; //added ' for forced text conversion in Excel 18/1/17
+        tempString  = [NSString stringWithFormat:@"%@,.%@.,.%@.", tempString3, ee, ff]; //added ' for forced text conversion in Excel 18/1/17
         tempString2 = [NSString stringWithFormat:@"%@:%@-%@",     tempString3, ee, ff];
 
         tempString3 = @"No:Ord:Test";
