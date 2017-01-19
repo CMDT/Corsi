@@ -43,8 +43,6 @@
     [super awakeFromNib];
     UIImage *resultsImage      = [UIImage imageNamed:@"results"];
     UIImage *resultsImageSel   = [UIImage imageNamed:@"results"];
-    //resultsImage               = [resultsImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    //resultsImageSel            = [resultsImageSel imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     self.tabBarItem            = [[UITabBarItem alloc] initWithTitle:@"Results" image:resultsImage selectedImage: resultsImageSel];
     self.scrollLBL.hidden      = YES;
 }
@@ -139,10 +137,6 @@
     
     //check if data exists, if not, display the holding message
     
-    //NSLog(@"/n/n *** Display info was ***:%@", printString);
-    //NSLog(@"/n/n *** Display data was ***:%@", printString2);
-    //NSLog(@"/n/n *** Data Ready Flag =:%i ***", singleton.dataReady);
-    
     [tableView reloadData];
     
     //[self saveText];
@@ -188,33 +182,13 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     // Configure the cell...
-    //cell.textLabel.text = [arrItems objectAtIndex:indexPath.row];
-    //old way when cell had no labels in it
-    //  cell.textLabel.text = [singleton.displayStringRows objectAtIndex:indexPath.row];
-    //  cell.textLabel.font = [UIFont systemFontOfSize:8.0];
-    
     //new way with one long label for titles and one short one, starting jhalfway for the data
     titleLab = (UILabel *)[cell viewWithTag:100];
     [titleLab setText:[singleton.displayStringTitles objectAtIndex:indexPath.row]];//title on left
     resultLab = (UILabel *)[cell viewWithTag:200];
     [resultLab setText:[singleton.displayStringRows objectAtIndex:indexPath.row]];//results on right (or none if heading
     
-    //done in storyboard
-    //[titleLab setFont: [UIFont fontWithName:@"Arial" size:12.0]];
-    //[resultLab setFont: [UIFont fontWithName:@"Arial" size:9.0]];
-    
     return cell;
-/*
- //example of label and button populating a cell
- - (UITableViewCell *)tableView: (UITableView *)tableView cellForRowAtIndexPath: (NSIndexPath *)indexPath { 
- UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"tvcItems"]; 
- UILabel *lblName = (UILabel *)[cell viewWithTag:100]; 
- [lblName setText:[maTheData objectAtIndex:[indexPath row]]]; 
- UIButton *btnName = (UIButton *)[cell viewWithTag:200]; 
- [btnName setTitle:[maTheData objectAtIndex:[indexPath row]] forState:UIControlStateNormal]; 
- return cell; 
- } -
- */
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -231,23 +205,15 @@
   willDisplayCell: (UITableViewCell*)cell
 forRowAtIndexPath: (NSIndexPath*)indexPath
 {
-    if (indexPath.row==0) {
+    if (indexPath.row == 0) {
+        //top of data
         titleLab.backgroundColor=[UIColor colorWithRed: 1.0 green: 0.8 blue: 0.8 alpha: 1.0];
         resultLab.backgroundColor=[UIColor colorWithRed: 1.0 green: 0.8 blue: 0.8 alpha: 1.0];
         titleLab.textAlignment=NSTextAlignmentCenter;
         resultLab.hidden=YES;
         
     }else{
-        
-    //cell.backgroundColor = indexPath.row % 2 //every other row colour change
-    //? [UIColor colorWithRed: 1.0 green: 1.0 blue: 0.95 alpha: 0.9]
-    //: [UIColor whiteColor];
-    //cell.textLabel.backgroundColor = [UIColor clearColor];
-    //cell.detailTextLabel.backgroundColor = [UIColor clearColor];
-        
-        //titleLab.backgroundColor=[UIColor colorWithRed: 1.0 green: 1.0 blue: 0.95 alpha: 1];
-        //resultLab.backgroundColor=[UIColor colorWithRed: 1.0 green: 1.0 blue: 0.95 alpha: 1];
-        
+        // all following rows
         titleLab.backgroundColor = indexPath.row % 2 //every other row colour change
         ? [UIColor colorWithRed: 1 green: 1 blue: 0.85 alpha: 0.90]
         : [UIColor whiteColor];
@@ -295,34 +261,11 @@ forRowAtIndexPath: (NSIndexPath*)indexPath
     //get sub name and add date
     filepath = [self.GetDocumentDirectory stringByAppendingPathComponent:self.setFilename];
     
-    // not needed as all file names have date added to end of name
-    //check if file exists
-    
-    //BOOL fileExists = TRUE;
-    //if([[NSFileManager defaultManager] fileExistsAtPath:filepath]) {
-    //exists, error, add +1 to filename and repeat
-    //BOOL fileExists = TRUE;
-    
-    
-    //singleton.subjectName = [singleton.olsSubjectName stringByAppendingString: [NSString stringWithFormat:@"_%@_%i",[self getCurrentDateTimeAsNSString], trynumber]];
-    //[self WriteToStringFile:textToWrite];
-    //    }
-    //else
-    //    {
-    //not exists, write
-    //BOOL fileExists = FALSE;
-    
-    //unrem if necessary
-    ///////******** singleton.oldSubjectName = [singleton.subjectName stringByAppendingString: [NSString stringWithFormat:@"_%@",[self getCurrentDateTimeAsNSString]]];
-    
-    //}
-    //
-    
     BOOL ok;
     ok = [textToWrite writeToFile:filepath atomically:YES encoding:NSASCIIStringEncoding error:&err];
     if (ok == NO) {
-        //(statusMessageLab.text=filepath, [err localizedFailureReason]);
-        //NSLog(@"Error writing file at %@\n%@", filepath, [err localizedFailureReason]);
+        // did not write for some reason
+        // NSLog(@"Error writing file at %@\n%@", filepath, [err localizedFailureReason]);
     }
 }
 

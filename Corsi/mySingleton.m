@@ -99,7 +99,7 @@ static mySingleton * sharedSingleton = nil;
         resultStringRows     = [[NSMutableArray alloc]initWithObjects: @"",nil]; //clear the arrays of any data
         displayStringRows    = [[NSMutableArray alloc]initWithObjects: @"",nil];
         displayStringTitles  = [[NSMutableArray alloc]initWithObjects: @"",nil];
-        email                = @"me@text.com";
+        email                = @"me@mmu.ac.uk";
         }
     return self;
 }

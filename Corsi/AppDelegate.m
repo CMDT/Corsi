@@ -15,13 +15,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-
-    // start of your application:didFinishLaunchingWithOptions // ...
-    
-    //[TestFlight takeOff:@"366e7ec5-6ae8-4163-ad1c-eb12570fb8da"];
-    // The rest of your application:didFinishLaunchingWithOptions method// ...
-    
     //start the main App with a message
 
     // wait while the user looks at the logos.... and enjoys them...?
@@ -42,7 +35,7 @@
     txtField.backgroundColor = [UIColor clearColor];
     txtField.textAlignment = NSTextAlignmentCenter;
     
-    txtField.text = @"To see details on how to \nuse this Application\n and adjust its settings, \nplease read the notes in \nthe 'Information' section.\n\nThis Application is NOT \nfor clinical use. v1.4.0 - 18.1.17";
+    txtField.text = @"To see details on how to \nuse this Application\n and adjust its settings, \nplease read the notes in \nthe 'Information' section.\n\nThis Application is NOT \nfor clinical use. v1.4.1 - 19.1.17";
 
     [alertView setValue:txtField forKeyPath:@"accessoryView"]; //for ios 7 and above
 

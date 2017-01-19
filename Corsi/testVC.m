@@ -139,18 +139,6 @@
     return self;
 }
 
-//-(id)initWithCoder:(NSCoder *)aDecoder {
-    //self = [super initWithCoder:aDecoder];
-    //if (self) {
-        //UIImage *tabIn  = [UIImage imageNamed:@"test"];
-        //UIImage *tabOut = [UIImage imageNamed:@"test"];
-        //UITabBarItem *tabBarItem = [self tabBarItem];
-        ///[tabBarItem initWithTitle:@"Test" image:tabIn tag:0];
-    //}
-    //return self;
-//}
-
-
 -(void)viewWillAppear:(BOOL)animated{
     self.tabBarController.tabBar.hidden = NO;
 }
@@ -163,10 +151,7 @@
     [super awakeFromNib];
     UIImage *testImage      = [UIImage imageNamed:@"test"];
     UIImage *testImageSel   = [UIImage imageNamed:@"test"];
-    //testImage               = [testImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    //testImageSel            = [testImageSel imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    //testImage               = [testImage imageWithRenderingMode:UIImageRenderingModeAutomatic];
-    //testImageSel            = [testImageSel imageWithRenderingMode:UIImageRenderingModeAutomatic];
+
     self.tabBarItem         = [[UITabBarItem alloc] initWithTitle:@"Test" image:testImage selectedImage: testImageSel];
 }
 - (void)viewDidLoad
@@ -456,17 +441,6 @@
 
     NSString * participant=@"none";
     participant = [[alertView textFieldAtIndex:0] text];//used to be 1 for dual entry, 0 for single
-        //NSLog(@"Tester Email    : %@", testerEmail);
-        //NSLog(@"Participant     : %@", participant);
-
-    //test for blank names and details
-    //if ([testerEmail isEqualToString:@""]) {
-    //    testerEmail=singleton.email;
-    //}
-
-    //update singleton
-    //singleton.email       = testerEmail;
-    //save to plist root
 
     //email name
         //[defaults setObject:testerEmail forKey:kEmail];
@@ -527,24 +501,13 @@
     MessageTextView.hidden=YES;
     
     //do a text input for the participant
-    //two line alert
-    /*UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@""
-                                                     message:@"Enter Tester Email and Participant Code"
-                                                    delegate:self
-                                           cancelButtonTitle:nil //@"Cancel"
-                                           otherButtonTitles:@"Continue", nil]; 
-     alert.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;*/
-    //one line alert
+ 
     UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@""//@"CORSI TEST START"
                                                      message:@"Enter a Participant Code For This Test, or to use the pervious one, \ntouch 'continue'"
                                                     delegate:self
                                            cancelButtonTitle:nil //@"Cancel"
                                            otherButtonTitles:@"Continue", nil];
     alert.alertViewStyle = UIAlertViewStylePlainTextInput;
-
-    //UITextField * alertTextField1 = [alert textFieldAtIndex:0];
-    //alertTextField1.keyboardType = UIKeyboardTypeEmailAddress;
-    //alertTextField1.placeholder = singleton.email;
 
     UITextField * alertTextField2   = [alert textFieldAtIndex:0];//used to be 1 for dual entry, 0 for single
     alertTextField2.secureTextEntry = NO;
@@ -1903,16 +1866,6 @@
     singleton.testDate=[self getCurrentDate];
 
     //NSLog(@"Results array cleared, new results ready..");
-    
-   /* NSLog(@"String 1 was:%@, your guess:%@",order[1],guessStr[1]);
-    NSLog(@"String 2 was:%@, your guess:%@",order[2],guessStr[2]);
-    NSLog(@"String 3 was:%@, your guess:%@",order[3],guessStr[3]);
-    NSLog(@"String 4 was:%@, your guess:%@",order[4],guessStr[4]);
-    NSLog(@"String 5 was:%@, your guess:%@",order[5],guessStr[5]);
-    NSLog(@"String 6 was:%@, your guess:%@",order[6],guessStr[6]);
-    NSLog(@"String 7 was:%@, your guess:%@",order[7],guessStr[7]);
-    NSLog(@"String 8 was:%@, your guess:%@",order[8],guessStr[8]);
-    NSLog(@"String 9 was:%@, your guess:%@",order[9],guessStr[9]);*/
 
     NSString * tempString;
     NSString * tempString2;
@@ -2191,24 +2144,16 @@
         tempString2 = [NSString stringWithFormat:@"  :%@%@", tempString2, [NSString stringWithFormat:@"c%dw%d", cor, wro]];
         //line
 
-        //tempString4=[NSString stringWithFormat:@"Test:123456789_CW"];
-        //[singleton.displayStringTitles addObject:tempString4];//title
-        //[singleton.displayStringRows addObject: @""];//data
         tempString3 = @"DATA:";
         [singleton.displayStringTitles addObject: tempString3 ];//title
         [singleton.displayStringRows   addObject: tempString2]; //data
         [singleton.resultStringRows    addObject: tempString];  //csv
-
-
     }
         //blankline
         tempString = @"";
         [singleton.resultStringRows addObject:tempString];//csv
         
         //nb arrays and vars zeroed in boxinit before timings start.
-        
-        //NSLog(@"Timings follow");
-        //NSLog(@"--------------");
         
         //check timing data is within limits and set max/mins if extended.  Crash possible if very long times get through.
         Float32 react=0.00;
@@ -2239,7 +2184,7 @@
         totalReactionTime = 0.00;
         
         //do the timings output to csv
-        tempString=[NSString stringWithFormat:@"Timings Output,,,Blocks,,,,,,,,,Minus 1st Reaction,,,All Reaction Timings"];
+        tempString=[NSString stringWithFormat:@"Timings Output,,,Blocks,,,,,,,,,,Minus 1st Reaction,,,All Reaction Timings"];
         [singleton.resultStringRows addObject:tempString];//csv
         
         tempString=@"Test No,,,1,2,3,4,5,6,7,8,9,Total-1,Min-1,Max-1,Average-1,,TotalT,MinT,MaxT,Average-T";
@@ -2359,16 +2304,6 @@
         [singleton.resultStringRows addObject:tempString];//csv
         
         //total time
-        //NSLog(@"total reaction time: %f", totalReactionTime);
-        //NSLog(@"* -------------- *");
-
-        //some test code to see data================
-        //for (int rr=0; rr< finish+1;rr++){
-        //    for (int ss=0; ss<rr; ss++) {
-        //        NSLog(@"React %i, %i : %f",rr,ss,reactionTime[rr][ss]);
-        //    }
-        //}
-            //=======================================
         tempString=@"Total Reaction Time";
         [singleton.displayStringTitles addObject:tempString ];//title
         tempString=[NSString stringWithFormat:@"%.0f", totalReactionTime];

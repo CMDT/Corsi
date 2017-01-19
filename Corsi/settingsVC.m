@@ -126,19 +126,6 @@
     settingsVC,
     testerLBL,
     emailLBL;
-//subjectLBL;//re instate if work out way to fit on screen space
-
-
-//-(id)initWithCoder:(NSCoder *)aDecoder {
-//    self = [super initWithCoder:aDecoder];
-//    if (self) {
-//        UIImage *tabIn  = [UIImage imageNamed:@"settings"];
-//        UIImage *tabOut = [UIImage imageNamed:@"settings"];
-//        UITabBarItem *tabBarItem = [self tabBarItem];
-//        [tabBarItem initWithTitle:@"Settings" image:tabIn tag:0];
-//    }
-//    return self;
-//}
 
 -(void)awakeFromNib{
     [super awakeFromNib];
@@ -272,7 +259,7 @@
 //*************************************************************
 //version, set anyway *****************************************
 //*************************************************************
-        version0 =  @"v1.4.0 - 18.1.17";              // version   *** keep short
+        version0 =  @"v1.4.1 - 19.1.17";              // version   *** keep short
         version1 =  @"MMU (c) 2017";               // copyright *** limited line space
         version2 =  @"j.a.howell@mmu.ac.uk";       // author    *** to display on device
         version3 =  @"http://www.ess.mmu.ac.uk";   // web site  *** settings screen
@@ -687,29 +674,7 @@
                                 [alert dismissViewControllerAnimated:YES completion:nil];
                                 
                                 }];
-    
-    /*
-     //yes/no type messages in alert
-     UIAlertAction * yesButton = [UIAlertAction
-                                actionWithTitle:@"Yes, please"
-                                style:UIAlertActionStyleDefault
-                                handler:^(UIAlertAction * action)
-                                {
-                                //Handel your yes please button action here
-                                [alert dismissViewControllerAnimated:YES completion:nil];
-                                
-                                }];
-    */
-    /* 
-     //for extra button if wanted
-     UIAlertAction * noButton = [UIAlertAction
-                               actionWithTitle:@"No, thanks"
-                               style:UIAlertActionStyleDefault
-                               handler:^(UIAlertAction * action)
-                               {
-                               [alert dismissViewControllerAnimated:YES completion:nil];
-                               
-                               }]; */
+
     [alert addAction:cancelButtonTitle];
     
     //[alert addAction:yesButton];
@@ -771,16 +736,6 @@
 
     [defaults synchronize];
     [self refreshView];
-
-    /*
-    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"CORSI TEST SETTINGS"
-                                                     message:@"\nThe settings were \n\n'LOADED' \n\nfor the tests."
-                                                    delegate:self
-                                           cancelButtonTitle:nil //@"Cancel"
-                                           otherButtonTitles:@"OK", nil];
-    alert.alertViewStyle = UIAlertViewStyleDefault;
-    [alert show];*/
-
 
 UIAlertController * alert =  [UIAlertController
                               alertControllerWithTitle:@"CORSI TEST SETTINGS"

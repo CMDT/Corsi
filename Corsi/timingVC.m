@@ -55,13 +55,13 @@
 
     int temp = blockStartDelaySLD.value;
 
-    if(temp>10000){
-        temp=10000;
+    if(temp > 10000){
+        temp = 10000;
         blockStartDelaySLD.value = temp;
 
     }
-    if(temp<0){
-        temp=0;
+    if(temp < 0){
+        temp = 0;
         blockStartDelaySLD.value = temp;
 
     }
@@ -74,13 +74,13 @@
 
     int temp = blockWaitTimeSLD.value;
 
-    if(temp>10000){
-        temp=10000;
+    if(temp > 10000){
+        temp = 10000;
         blockWaitTimeSLD.value = temp;
 
     }
-    if(temp<0){
-        temp=0;
+    if(temp < 0){
+        temp = 0;
         blockWaitTimeSLD.value = temp;
 
     }
@@ -93,13 +93,13 @@ blockWaitTimeTXT.text=[NSString stringWithFormat:@"%0.0f", (float)temp];
 
     int temp = blockShowTimeSLD.value;
 
-    if(temp>10000){
-        temp=10000;
+    if(temp > 10000){
+        temp = 10000;
         blockShowTimeSLD.value = temp;
 
     }
-    if(temp<0){
-        temp=0;
+    if(temp < 0){
+        temp = 0;
         blockShowTimeSLD.value = temp;
 
     }
@@ -123,12 +123,12 @@ blockWaitTimeTXT.text=[NSString stringWithFormat:@"%0.0f", (float)temp];
     showTime  = singleton.showTime;
 
     blockStartDelaySLD.value = startTime;
-    blockWaitTimeSLD.value = waitTime;
-    blockShowTimeSLD.value = showTime;
+    blockWaitTimeSLD.value   = waitTime;
+    blockShowTimeSLD.value   = showTime;
     
-    blockStartDelayTXT.text=[NSString stringWithFormat:@"%0.0f", (float)blockStartDelaySLD.value];
-    blockWaitTimeTXT.text=[NSString stringWithFormat:  @"%0.0f", (float)blockWaitTimeSLD.value];
-    blockShowTimeTXT.text=[NSString stringWithFormat:  @"%0.0f", (float)blockShowTimeSLD.value];
+    blockStartDelayTXT.text  = [NSString stringWithFormat:@"%0.0f", (float)blockStartDelaySLD.value];
+    blockWaitTimeTXT.text    = [NSString stringWithFormat:  @"%0.0f", (float)blockWaitTimeSLD.value];
+    blockShowTimeTXT.text    = [NSString stringWithFormat:  @"%0.0f", (float)blockShowTimeSLD.value];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -147,19 +147,19 @@ blockWaitTimeTXT.text=[NSString stringWithFormat:@"%0.0f", (float)temp];
     // change the color of the text box when you touch it
 
 
-    if(textField==self->blockStartDelayTXT){
+    if(textField==self -> blockStartDelayTXT){
         blockStartDelayTXT.backgroundColor = [UIColor greenColor];
         textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
         int oft=textField.frame.origin.y-195;
         [self keyBoardAppeared:oft];
     }
-    if(textField==self->blockWaitTimeTXT){
+    if(textField==self -> blockWaitTimeTXT){
         blockWaitTimeTXT.backgroundColor = [UIColor greenColor];
         textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
         int oft=textField.frame.origin.y-195;
         [self keyBoardAppeared:oft];
     }
-    if(textField==self->blockShowTimeTXT){
+    if(textField==self -> blockShowTimeTXT){
         blockShowTimeTXT.backgroundColor = [UIColor greenColor];
         textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
         int oft=textField.frame.origin.y-195;
@@ -173,42 +173,42 @@ blockWaitTimeTXT.text=[NSString stringWithFormat:@"%0.0f", (float)temp];
     mySingleton *singleton = [mySingleton sharedSingleton];
 
     int startTemp = [blockStartDelayTXT.text intValue];
-    int waitTemp = [blockWaitTimeTXT.text intValue];
-    int showTemp = [blockShowTimeTXT.text intValue];
+    int waitTemp  = [blockWaitTimeTXT.text intValue];
+    int showTemp  = [blockShowTimeTXT.text intValue];
     
-    bool flag=YES;
-    entryIsValid = YES;
+    bool flag     = YES;
+    entryIsValid  = YES;
     
-    if (startTemp<0) {
-        startTemp=0;
-        flag=NO;
+    if (startTemp < 0) {
+        startTemp = 0;
+        flag = NO;
         blockStartDelayTXT.backgroundColor  = [UIColor cyanColor];
     }
-    if (startTemp>10000) {
-        startTemp=10000;
-        flag=NO;
+    if (startTemp > 10000) {
+        startTemp = 10000;
+        flag = NO;
         blockStartDelayTXT.backgroundColor  = [UIColor cyanColor];
     }
-    if (waitTemp<0) {
-        waitTemp=0;
-        flag=NO;
+    if (waitTemp < 0) {
+        waitTemp = 0;
+        flag = NO;
         blockWaitTimeTXT.backgroundColor    = [UIColor cyanColor];
 
     }
-    if (waitTemp>10000) {
-        waitTemp=10000;
-        flag=NO;
+    if (waitTemp > 10000) {
+        waitTemp = 10000;
+        flag =NO;
         blockWaitTimeTXT.backgroundColor    = [UIColor cyanColor];
 
     }
-    if (showTemp<0) {
-        showTemp=0;
-        flag=NO;
+    if (showTemp < 0) {
+        showTemp = 0;
+        flag = NO;
         blockShowTimeTXT.backgroundColor    = [UIColor cyanColor];
     }
-    if (showTemp>10000) {
-        showTemp=10000;
-        flag=NO;
+    if (showTemp > 10000) {
+        showTemp = 10000;
+        flag = NO;
         blockShowTimeTXT.backgroundColor    = [UIColor cyanColor];
     }
     blockStartDelaySLD.value = startTemp;
@@ -223,7 +223,7 @@ blockWaitTimeTXT.text=[NSString stringWithFormat:@"%0.0f", (float)temp];
     singleton.waitTime  = [blockWaitTimeTXT.text intValue];
     singleton.showTime  = [blockShowTimeTXT.text intValue];
 
-    if (flag==YES) {
+    if (flag == YES) {
         entryIsValid = YES;
     }else{
         entryIsValid = NO;
@@ -246,9 +246,9 @@ blockWaitTimeTXT.text=[NSString stringWithFormat:@"%0.0f", (float)temp];
     if (entryIsValid) {
 
         timingMessage = @"'Start' is the time delay before the first block shows.\n'Block' is the timing gap between show times, and\n'Show' is the time a block displays as a stimulus.";
-        timeMessageTXT.backgroundColor = [UIColor whiteColor];
-        timeMessageTXT.text = timingMessage;
-        timeMessageTXT.textAlignment = NSTextAlignmentCenter;
+        timeMessageTXT.backgroundColor  = [UIColor whiteColor];
+        timeMessageTXT.text             = timingMessage;
+        timeMessageTXT.textAlignment    = NSTextAlignmentCenter;
     }else{
         blockStartDelaySLD.value = [blockStartDelayTXT.text intValue];
         blockWaitTimeSLD.value   = [blockWaitTimeTXT.text intValue];

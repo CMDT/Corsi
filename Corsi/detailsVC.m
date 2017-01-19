@@ -52,8 +52,8 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
     //save the updated names to plist
     [defaults setObject:singleton.subjectName forKey:kSubject];
-    [defaults setObject:singleton.testerName forKey:kTester];
-    [defaults setObject:singleton.email forKey:kEmail];
+    [defaults setObject:singleton.testerName  forKey:kTester];
+    [defaults setObject:singleton.email       forKey:kEmail];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -102,22 +102,22 @@
     // change the color of the text box when you touch it
     //turned off the screen move, as not needed on this page
 
-    if(textField==self->emailTXT){
+    if(textField == self -> emailTXT){
         emailTXT.backgroundColor = [UIColor greenColor];
         textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
-        int oft=textField.frame.origin.y-215;
+        int oft = textField.frame.origin.y-215;
         [self keyBoardAppeared:oft];
     }
-    if(textField==self->participantTXT){
+    if(textField == self -> participantTXT){
         participantTXT.backgroundColor = [UIColor greenColor];
         textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
-        int oft=textField.frame.origin.y-215;
+        int oft = textField.frame.origin.y-215;
         [self keyBoardAppeared:oft];
     }
-    if(textField==self->testerNameTXT){
+    if(textField == self -> testerNameTXT){
         testerNameTXT.backgroundColor = [UIColor greenColor];
         textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
-        int oft=textField.frame.origin.y-215;
+        int oft = textField.frame.origin.y-215;
         [self keyBoardAppeared:oft];
     }
 }

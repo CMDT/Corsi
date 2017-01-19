@@ -147,9 +147,9 @@ images, imageNames;
     blockCol4.backgroundColor  = blc;
     blockCol5.backgroundColor  = blc;
 
-    showc=[self colourUIToString:sho];
-    backgr=[self colourUIToString:bac];
-    blockc=[self colourUIToString:blc];
+    showc  = [self colourUIToString:sho];
+    backgr = [self colourUIToString:bac];
+    blockc = [self colourUIToString:blc];
     [self bSpin];
     [self colourChecks]; //initialise messages after check on combinations
 }
@@ -163,11 +163,11 @@ images, imageNames;
     
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 80, 30)];
 
-    label.backgroundColor = [UIColor clearColor];
-    label.textColor = [UIColor blackColor];
-    label.font = [UIFont fontWithName:@"HelveticaNeue" size:14];//@"HelveticaNeue-Bold" size:14];
-    label.textAlignment=NSTextAlignmentCenter;
-    label.text = [NSString stringWithFormat:@"%@", colourArrayBack[row]];
+    label.backgroundColor   = [UIColor clearColor];
+    label.textColor         = [UIColor blackColor];
+    label.font              = [UIFont fontWithName:@"HelveticaNeue" size:14];//@"HelveticaNeue-Bold" size:14];
+    label.textAlignment     = NSTextAlignmentCenter;
+    label.text              = [NSString stringWithFormat:@"%@", colourArrayBack[row]];
 
     //return label;
         return [images objectAtIndex:row],label;
@@ -207,9 +207,9 @@ images, imageNames;
     {
     backBTN.hidden=NO;
 
-    showPicker.backgroundColor=[UIColor whiteColor];
-    backPicker.backgroundColor=[UIColor whiteColor];
-    blockPicker.backgroundColor=[UIColor whiteColor];
+    showPicker.backgroundColor  = [UIColor whiteColor];
+    backPicker.backgroundColor  = [UIColor whiteColor];
+    blockPicker.backgroundColor = [UIColor whiteColor];
 
     if (pickerView.tag==0) { //block
     switch(row)
@@ -331,132 +331,132 @@ images, imageNames;
         }
     }
     
-        if (pickerView.tag==2) { //backgr
+        if (pickerView.tag == 2) { //backgr
             switch(row)
         { //background
             case 0:
                 backCol.backgroundColor = [UIColor blackColor];
-                backgr=0;
+                backgr = 0;
                 break;
             case 1:
                 backCol.backgroundColor = [UIColor blueColor];
-                backgr=1;
+                backgr = 1;
                 break;
             case 2:
                 backCol.backgroundColor = [UIColor greenColor];
-                backgr=2;
+                backgr = 2;
                 break;
             case 3:
                 backCol.backgroundColor = [UIColor redColor];
-                backgr=3;
+                backgr = 3;
                 break;
             case 4:
                 backCol.backgroundColor = [UIColor cyanColor];
-                backgr=4;
+                backgr = 4;
                 break;
             case 5:
                 backCol.backgroundColor = [UIColor whiteColor];
-                backgr=5;
+                backgr = 5;
                 break;
             case 6:
                 backCol.backgroundColor = [UIColor yellowColor];
-                backgr=6;
+                backgr = 6;
                 break;
             case 7:
                 backCol.backgroundColor = [UIColor magentaColor];
-                backgr=7;
+                backgr = 7;
                 break;
             case 8:
                 backCol.backgroundColor = [UIColor grayColor];
-                backgr=8;
+                backgr = 8;
                 break;
             case 9:
                 backCol.backgroundColor = [UIColor orangeColor];
-                backgr=9;
+                backgr = 9;
                 break;
             case 10:
                 backCol.backgroundColor = [UIColor brownColor];
-                backgr=10;
+                backgr = 10;
                 break;
             case 11:
                 backCol.backgroundColor = [UIColor purpleColor];
-                backgr=11;
+                backgr = 11;
                 break;
             case 12:
                 backCol.backgroundColor = [UIColor darkGrayColor];
-                backgr=12;
+                backgr = 12;
                 break;
             case 13:
                 backCol.backgroundColor = [UIColor lightGrayColor];
-                backgr=13;
+                backgr = 13;
                 break;
             default:
-                backgr=15;
+                backgr = 15;
         }
     }
     
-    if (pickerView.tag==1)
+    if (pickerView.tag == 1)
         { //show
         switch(row)
         { //show
             case 0:
                 showCol.backgroundColor = [UIColor blackColor];
-                showc=0;
+                showc = 0;
                 break;
             case 1:
                 showCol.backgroundColor = [UIColor blueColor];
-                showc=1;
+                showc = 1;
                 break;
             case 2:
                 showCol.backgroundColor = [UIColor greenColor];
-                showc=2;
+                showc = 2;
                 break;
             case 3:
                 showCol.backgroundColor = [UIColor redColor];
-                showc=3;
+                showc = 3;
                 break;
             case 4:
                 showCol.backgroundColor = [UIColor cyanColor];
-                showc=4;
+                showc = 4;
                 break;
             case 5:
                 showCol.backgroundColor = [UIColor whiteColor];
-                showc=5;
+                showc = 5;
                 break;
             case 6:
                 showCol.backgroundColor = [UIColor yellowColor];
-                showc=6;
+                showc = 6;
                 break;
             case 7:
                 showCol.backgroundColor = [UIColor magentaColor];
-                showc=7;
+                showc = 7;
                 break;
             case 8:
                 showCol.backgroundColor = [UIColor grayColor];
-                showc=8;
+                showc = 8;
                 break;
             case 9:
                 showCol.backgroundColor = [UIColor orangeColor];
-                showc=9;
+                showc = 9;
                 break;
             case 10:
                 showCol.backgroundColor = [UIColor brownColor];
-                showc=10;
+                showc = 10;
                 break;
             case 11:
                 showCol.backgroundColor = [UIColor purpleColor];
-                showc=11;
+                showc = 11;
                 break;
             case 12:
                 showCol.backgroundColor = [UIColor darkGrayColor];
-                showc=12;
+                showc = 12;
                 break;
             case 13:
                 showCol.backgroundColor = [UIColor lightGrayColor];
-                showc=13;
+                showc = 13;
                 break;
             default:
-                showc=14;
+                showc = 14;
         }
     }
     [self colourChecks];
@@ -605,25 +605,25 @@ images, imageNames;
     mySingleton *singleton = [mySingleton sharedSingleton];
     BOOL isValidColour = YES;
 
-    backBTN.hidden=NO;
+    backBTN.hidden = NO;
     mess = @"Colour selection valid.";
     messageTextView.backgroundColor = [UIColor colorWithRed:0.8 green:1.0 blue:0.8 alpha:1.0];
 
     if (backgr == showc) {
         messageTextView.backgroundColor = [UIColor colorWithRed:1.0 green:0.8 blue:0.8 alpha:1.0];
-        mess=@"Cannot have Show and Background \nColours the same";
+        mess = @"Cannot have Show and Background \nColours the same";
         backBTN.hidden = YES;
         isValidColour  = NO;
     }
     if (blockc == showc) {
         messageTextView.backgroundColor = [UIColor colorWithRed:1.0 green:0.8 blue:0.8 alpha:1.0];
-        mess=@"Cannot have Show and Block \nColours the same";
+        mess = @"Cannot have Show and Block \nColours the same";
         backBTN.hidden = YES;
         isValidColour  = NO;
     }
     if ((blockc == backgr) && (blockc != showc)) {
         messageTextView.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:0.8 alpha:1.0];
-        mess=@"Although you can select these colours, \nit produces invisible blocks in a test.";
+        mess = @"Although you can select these colours, \nit produces invisible blocks in a test.";
         backBTN.hidden = NO;
         isValidColour  = YES;
     }
@@ -634,9 +634,9 @@ images, imageNames;
     self.messageTextView.font = [UIFont fontWithName:@"HelveticaNeue" size:12];//[UIFont fontWithName:@"HelveticaNeue" size:10];
     if (isValidColour) {
         //if valid, update singleton colours
-        singleton.currentBlockColour=[self numToUIColor:blockc];
-        singleton.currentShowColour=[self numToUIColor:showc];
-        singleton.currentBackgroundColour=[self numToUIColor:backgr];
+        singleton.currentBlockColour      = [self numToUIColor:blockc];
+        singleton.currentShowColour       = [self numToUIColor:showc];
+        singleton.currentBackgroundColour = [self numToUIColor:backgr];
     }
 }
 @end

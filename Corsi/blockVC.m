@@ -55,42 +55,42 @@ soundsSEG;
 
     //switches set
     if(singleton.blockRotation){
-        blockRotateSWT.on=YES;
+        blockRotateSWT.on = YES;
     }else{
-        blockRotateSWT.on=NO;
+        blockRotateSWT.on = NO;
     }
     if(singleton.forwardTestDirection){
-        forwardTestSWT.on=YES;
+        forwardTestSWT.on = YES;
     }else{
-        forwardTestSWT.on=NO;
+        forwardTestSWT.on = NO;
     }
     if(singleton.onScreenInfo){
-        onScreenInfoSWT.on=YES;
+        onScreenInfoSWT.on = YES;
     }else{
-        onScreenInfoSWT.on=NO;
+        onScreenInfoSWT.on = NO;
     }
     if(singleton.animals){
-        animalsSWT.on=YES;
+        animalsSWT.on = YES;
     }else{
-        animalsSWT.on=NO;
+        animalsSWT.on = NO;
     }
     if(singleton.sounds){
-        soundsSEG.hidden=NO;
-        soundsSWT.on=YES;
-        soundsSEG.selectedSegmentIndex=singleton.segIndex;
+        soundsSEG.hidden = NO;
+        soundsSWT.on     = YES;
+        soundsSEG.selectedSegmentIndex = singleton.segIndex;
     }else{
-        soundsSWT.on=NO;
-        soundsSEG.hidden=YES;
+        soundsSWT.on     = NO;
+        soundsSEG.hidden = YES;
     }
 
     //blocks set
-    start=singleton.start;
-    finish=singleton.finish;
-    blockSize=singleton.blockSize;
+    start       = singleton.start;
+    finish      = singleton.finish;
+    blockSize   = singleton.blockSize;
 
-    blockFinishNumLBL.text=[NSString stringWithFormat:@"%d",finish];
-    blockStartNumLBL.text=[NSString stringWithFormat:@"%d",start];
-    blockSizeLBL.text=[NSString stringWithFormat:@"%.0f",blockSize];
+    blockFinishNumLBL.text = [NSString stringWithFormat:@"%d",finish];
+    blockStartNumLBL.text  = [NSString stringWithFormat:@"%d",start];
+    blockSizeLBL.text      = [NSString stringWithFormat:@"%.0f",blockSize];
     [self buttonIncCheck];
 }
 
@@ -132,53 +132,53 @@ soundsSEG;
 
 -(void)buttonIncCheck{
     //change alpha value of graphic if range exceeded
-    if(start==3){
+    if(start == 3){
         startMinusBTN.alpha  = 0.3;
     }
-    if(finish==9){
+    if(finish == 9){
         finishPlusBTN.alpha  = 0.3;
     }
-    if(finish==3){
+    if(finish == 3){
         finishMinusBTN.alpha = 0.3;
     }
-    if(start==9){
+    if(start == 9){
         startPlusBTN.alpha   = 0.3;
     }
-    if(start==finish){
+    if(start == finish){
         startPlusBTN.alpha   = 0.3;
-        finishMinusBTN.alpha=0.3;
+        finishMinusBTN.alpha = 0.3;
     }
-    if(blockSize==55){
-        sizePlusBTN.alpha=.3;
+    if(blockSize == 55){
+        sizePlusBTN.alpha    = 0.3;
     }
-    if(blockSize==10){
-        sizeMinusBTN.alpha=.3;
+    if(blockSize == 10){
+        sizeMinusBTN.alpha   = 0.3;
     }
-    if(start<finish){
-        startPlusBTN.alpha=1;
-        finishMinusBTN.alpha=1;
+    if(start < finish){
+        startPlusBTN.alpha   = 1;
+        finishMinusBTN.alpha = 1;
     }
-    if(finish>start){
-        startPlusBTN.alpha=1;
-        finishMinusBTN.alpha=1;
+    if(finish > start){
+        startPlusBTN.alpha   = 1;
+        finishMinusBTN.alpha = 1;
     }
 }
 
 - (IBAction)blockStartPlusBTN:(id)sender{
     //increment start
     mySingleton *singleton = [mySingleton sharedSingleton];
-    start=singleton.start;
-    finish=singleton.finish;
+    start  = singleton.start;
+    finish = singleton.finish;
 
     start++;
-    startMinusBTN.alpha=1;
-    startPlusBTN.alpha=1;
+    startMinusBTN.alpha = 1;
+    startPlusBTN.alpha  = 1;
 
-    if (start>=9) {
-        start=9;
+    if (start >= 9) {
+        start  = 9;
     }
-    if (start>finish) {
-        start=finish;
+    if (start > finish) {
+        start = finish;
     }
     [self buttonIncCheck];
     
@@ -191,14 +191,14 @@ soundsSEG;
 - (IBAction)blockFinishPlusBTN:(id)sender{
     //increment finish
     mySingleton *singleton = [mySingleton sharedSingleton];
-    start=singleton.start;
-    finish=singleton.finish;
+    start  = singleton.start;
+    finish = singleton.finish;
 
     finish++;
-    finishMinusBTN.alpha=1;
-    finishPlusBTN.alpha=1;
-    if (finish>=9) {
-        finish=9;
+    finishMinusBTN.alpha = 1;
+    finishPlusBTN.alpha  = 1;
+    if (finish >= 9) {
+        finish  = 9;
     }
     [self buttonIncCheck];
     blockStartNumLBL.text  = [NSString stringWithFormat:@"%d",start];
@@ -210,30 +210,30 @@ soundsSEG;
 - (IBAction)blockSizePlusBTN:(id)sender{
     //increment size
     mySingleton *singleton = [mySingleton sharedSingleton];
-    blockSize=singleton.blockSize;
-    blockSize=blockSize+5;
-    sizeMinusBTN.alpha=1;
-    sizePlusBTN.alpha=1;
-    if (blockSize>55) {
-        blockSize=55;
+    blockSize           = singleton.blockSize;
+    blockSize = blockSize+5;
+    sizeMinusBTN.alpha  = 1;
+    sizePlusBTN.alpha   = 1;
+    if (blockSize > 55) {
+        blockSize       = 55;
     }
     [self buttonIncCheck];
-    blockSizeLBL.text  = [NSString stringWithFormat:@"%.0f", blockSize];
+    blockSizeLBL.text      = [NSString stringWithFormat:@"%.0f", blockSize];
     singleton.blockSize    = blockSize;
 }
 
 - (IBAction)blockStartMinusBTN:(id)sender{
     //decrement start
     mySingleton *singleton = [mySingleton sharedSingleton];
-    start=singleton.start;
-    finish=singleton.finish;
+    start  = singleton.start;
+    finish = singleton.finish;
 
     start--;
-    startMinusBTN.alpha=1;
-    startPlusBTN.alpha=1;
+    startMinusBTN.alpha = 1;
+    startPlusBTN.alpha  = 1;
 
-    if (start<=3) {
-        start=3;
+    if (start <= 3) {
+        start  = 3;
     }
     [self buttonIncCheck];
     blockStartNumLBL.text  = [NSString stringWithFormat:@"%d",start];
@@ -245,18 +245,18 @@ soundsSEG;
 - (IBAction)blockFinishMinusBTN:(id)sender{
     //decrement finish
     mySingleton *singleton = [mySingleton sharedSingleton];
-    start=singleton.start;
-    finish=singleton.finish;
+    start  = singleton.start;
+    finish = singleton.finish;
 
     finish--;
-    finishMinusBTN.alpha=1;
-    finishPlusBTN.alpha=1;
+    finishMinusBTN.alpha = 1;
+    finishPlusBTN.alpha  = 1;
 
-    if (finish<=3) {
-          finish=3;
+    if (finish <= 3) {
+          finish = 3;
     }
-    if (finish<start) {
-        finish=start;
+    if (finish < start) {
+        finish = start;
      }
 
     [self buttonIncCheck];
@@ -270,18 +270,18 @@ soundsSEG;
     //decrement size
     mySingleton *singleton = [mySingleton sharedSingleton];
 
-    blockSize=singleton.blockSize;
-    blockSize=blockSize-5;
-    sizeMinusBTN.alpha=1;
-    sizePlusBTN.alpha=1;
+    blockSize           = singleton.blockSize;
+    blockSize           = blockSize-5;
+    sizeMinusBTN.alpha  = 1;
+    sizePlusBTN.alpha   = 1;
 
-    if (blockSize<10) {
-        blockSize=10;
+    if (blockSize < 10) {
+        blockSize = 10;
     }
 
     [self buttonIncCheck];
-    blockSizeLBL.text  = [NSString stringWithFormat:@"%.0f", blockSize];
-    singleton.blockSize    = blockSize;
+    blockSizeLBL.text   = [NSString stringWithFormat:@"%.0f", blockSize];
+    singleton.blockSize = blockSize;
 }
 
 - (IBAction)forwardTestSWT:(id)sender{
@@ -307,7 +307,7 @@ soundsSEG;
     } else {
         screenInfoDisplayed = NO;
     }
-    singleton.onScreenInfo = screenInfoDisplayed;
+    singleton.onScreenInfo  = screenInfoDisplayed;
 }
 
 - (IBAction)blockRotateSWT:(id)sender{
