@@ -2110,7 +2110,7 @@
         ee = [order[xx] substringWithRange:NSMakeRange(0, xx)];
         ff = [guessStr[xx] substringWithRange:NSMakeRange(0, xx)];
 
-        tempString  = [NSString stringWithFormat:@"%@,.%@.,.%@.", tempString3, ee, ff]; //added ' for forced text conversion in Excel 18/1/17
+        tempString  = [NSString stringWithFormat:@"%@,\"%@\"\n,\"%@\"\n", tempString3, ee, ff]; //added ' for forced text conversion in Excel 18/1/17
         tempString2 = [NSString stringWithFormat:@"%@:%@-%@",     tempString3, ee, ff];
 
         tempString3 = @"No:Ord:Test";
