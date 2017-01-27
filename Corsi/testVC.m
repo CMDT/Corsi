@@ -2107,11 +2107,11 @@
 
         tempString3 = [NSString stringWithFormat:@"%d", xx-2];
 
-        ee = [order[xx] substringWithRange:NSMakeRange(0, xx)];
+        ee = [order[xx]    substringWithRange:NSMakeRange(0, xx)];
         ff = [guessStr[xx] substringWithRange:NSMakeRange(0, xx)];
-
-        tempString  = [NSString stringWithFormat:@"%@,\"%@\"\n,\"%@\"\n", tempString3, ee, ff]; //added ' for forced text conversion in Excel 18/1/17
-        tempString2 = [NSString stringWithFormat:@"%@:%@-%@",     tempString3, ee, ff];
+        
+        tempString  = [NSString stringWithFormat:@"%@,.%@.,.%@.", tempString3, ee, ff]; //ee, ff]; //added ' for forced text conversion in Excel 18/1/17 csv
+        tempString2 = [NSString stringWithFormat:@"%@:%@-%@",         tempString3, ee, ff]; //screen
 
         tempString3 = @"No:Ord:Test";
         [singleton.displayStringTitles addObject:tempString3];  //title
