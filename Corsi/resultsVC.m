@@ -52,6 +52,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.scrollLBL.hidden      = YES;
+    self.tabBarController.tabBar.hidden = NO;
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -75,7 +76,7 @@
         tableView.hidden       = YES;
         emailBTN.hidden        = YES;
         resultsTxtView.hidden  = NO;
-        scrollLBL.hidden       = NO;
+        scrollLBL.hidden       = YES; // now not needed really?
         
         //clear arrays for results strings
         [singleton.resultStringRows    removeAllObjects];

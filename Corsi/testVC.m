@@ -1667,12 +1667,12 @@
         [MessageView setImage: card[6].image];
     //jump to selector ResultsVC
 
-        [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(selectTabBarResults) userInfo:nil repeats:NO];
+        [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(selectTabBarResults) userInfo:nil repeats:NO];
     }else{
         
         //jump to selector SettingsVC
 
-        [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(selectTabBarSettings) userInfo:nil repeats:NO];
+        [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(selectTabBarSettings) userInfo:nil repeats:NO];
     }
 }
 
@@ -2392,6 +2392,7 @@
     singleton.dataReady = YES;
         
     //jump to the results page
+    self.tabBarController.tabBar.hidden = NO;
     [NSTimer scheduledTimerWithTimeInterval: 0 target:self selector:@selector(jumpToResultsView) userInfo:nil repeats:NO];
     }
 }
