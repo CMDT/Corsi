@@ -64,8 +64,11 @@
     self.heading.hidden                 = NO;
     self.scrollLBL.hidden               = YES;
     
-    
     if (singleton.dataReady   == YES) {
+        //alter height of re
+        // tableView.frame = CGRectMake(tableView.frame.origin.x, tableView.frame.origin.y, tableView.frame.size.width, tableView.frame.size.height);
+        tableView.frame = CGRectMake(tableView.frame.origin.x, tableView.frame.origin.y, tableView.frame.size.width, 517);
+        resultsTxtView.frame = CGRectMake(resultsTxtView.frame.origin.x, resultsTxtView.frame.origin.y, resultsTxtView.frame.size.width, 517);
         resultsTempString      = @"";
         emailBTN.hidden        = NO;
         emailBTN.alpha         = 1.0;
@@ -73,6 +76,7 @@
         resultsTxtView.hidden  = YES;
         scrollLBL.hidden       = YES;
     }else{
+        resultsTxtView.frame = CGRectMake(resultsTxtView.frame.origin.x, resultsTxtView.frame.origin.y, resultsTxtView.frame.size.width, 561);
         tableView.hidden       = YES;
         emailBTN.hidden        = YES;
         resultsTxtView.hidden  = NO;
