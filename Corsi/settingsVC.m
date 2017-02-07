@@ -259,7 +259,7 @@
 //*************************************************************
 //version, set anyway *****************************************
 //*************************************************************
-        version0 =  @"v1.4.2 - 6.2.17";              // version   *** keep short
+        version0 =  @"v1.4.3 - 7.2.17";              // version   *** keep short
         version1 =  @"MMU (c) 2017";               // copyright *** limited line space
         version2 =  @"j.a.howell@mmu.ac.uk";       // author    *** to display on device
         version3 =  @"http://www.ess.mmu.ac.uk";   // web site  *** settings screen
@@ -309,15 +309,15 @@
 //email name
     email     = [defaults objectForKey:kEmail];
     if(email  == nil ){
-        email =  @"me@test.com";
-        [defaults setObject:@"me@test.com" forKey:kEmail];
+        email =  @"me@mmu.ac.uk.com";
+        [defaults setObject:@"me@mmu.ac.uk" forKey:kEmail];
     }
 //beep Effect Name
     beepName     = [defaults objectForKey:kBeep];
     if(beepName  == nil ){
-        beepName =  @"BEEPJAZZ";
-        singleton.segIndex = 5;
-        [defaults setObject:@"BEEPJAZZ" forKey:kBeep];
+        beepName =  @"KLICK";
+        singleton.segIndex = 0;
+        [defaults setObject:@"KLICK" forKey:kBeep];
     }
 //start block
     NSString *temp = [defaults objectForKey:kStart];
@@ -370,8 +370,8 @@
 //set sounds
     temp        = [defaults objectForKey:kSounds];
     if( temp == nil ){
-        sounds =  YES;
-        [defaults setBool:YES forKey:kSounds];
+        sounds =  NO;
+        [defaults setBool:NO forKey:kSounds];
     }
 //set status messages
     temp        = [defaults objectForKey:kInfo];

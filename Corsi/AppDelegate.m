@@ -35,7 +35,7 @@
     txtField.backgroundColor = [UIColor clearColor];
     txtField.textAlignment = NSTextAlignmentCenter;
     
-    txtField.text = @"To see details on how to \nuse this Application\n and adjust its settings, \nplease read the notes in \nthe 'Information' section.\n\nThis Application is NOT \nfor clinical use. v1.4.2 - 6.2.17";
+    txtField.text = @"To see details on how to \nuse this Application\n and adjust its settings, \nplease read the notes in \nthe 'Information' section.\n\nThis Application is NOT \nfor clinical use. v1.4.3 - 7.2.17";
 
     [alertView setValue:txtField forKeyPath:@"accessoryView"]; //for ios 7 and above
 
