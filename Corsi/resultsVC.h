@@ -15,6 +15,7 @@
 {
     
 IBOutlet UITextView    * resultsTxtView;
+IBOutlet UITextView    * screenH; //for guaging height of screen for different devices
 //text views for text displays ie results or help screens
 
 // for file manager
@@ -47,6 +48,7 @@ IBOutlet UITextView    * resultsTxtView;
 @property (nonatomic, strong) IBOutlet UIButton    * emailBTN;
 @property (nonatomic, strong) UITextView           * resultsTxtView;
 @property (strong, nonatomic) IBOutlet UITableView * tableView;
+@property (strong, nonatomic) UITextView           * screenH;
 @property (strong, nonatomic) IBOutlet UILabel     * heading;
 @property (strong, nonatomic) IBOutlet UILabel     * scrollLBL;
 

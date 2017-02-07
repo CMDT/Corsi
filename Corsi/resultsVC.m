@@ -26,6 +26,7 @@
 
 @synthesize
     resultsTxtView,
+    screenH,
     testDate,
     startDate,
     fileMgr,
@@ -55,6 +56,11 @@
     self.tabBarController.tabBar.hidden = NO;
 }
 
+-(void)viewDidDisappear:(BOOL)animated{
+    resultsTxtView.hidden  = YES;
+    tableView.hidden       = YES;
+}
+
 -(void)viewDidAppear:(BOOL)animated{
     mySingleton *singleton = [mySingleton sharedSingleton];
     
@@ -64,11 +70,14 @@
     self.heading.hidden                 = NO;
     self.scrollLBL.hidden               = YES;
     
+    //check frame height and add 44 or take 44 for email button
+    float fh = screenH.frame.size.height;
+    
     if (singleton.dataReady   == YES) {
         //alter height of re
         // tableView.frame = CGRectMake(tableView.frame.origin.x, tableView.frame.origin.y, tableView.frame.size.width, tableView.frame.size.height);
-        tableView.frame = CGRectMake(tableView.frame.origin.x, tableView.frame.origin.y, tableView.frame.size.width, 517);
-        resultsTxtView.frame = CGRectMake(resultsTxtView.frame.origin.x, resultsTxtView.frame.origin.y, resultsTxtView.frame.size.width, 517);
+        
+        resultsTxtView.frame = CGRectMake(resultsTxtView.frame.origin.x, resultsTxtView.frame.origin.y, resultsTxtView.frame.size.width, fh);
         resultsTempString      = @"";
         emailBTN.hidden        = NO;
         emailBTN.alpha         = 1.0;
@@ -76,7 +85,7 @@
         resultsTxtView.hidden  = YES;
         scrollLBL.hidden       = YES;
     }else{
-        resultsTxtView.frame = CGRectMake(resultsTxtView.frame.origin.x, resultsTxtView.frame.origin.y, resultsTxtView.frame.size.width, 561);
+        resultsTxtView.frame = CGRectMake(resultsTxtView.frame.origin.x, resultsTxtView.frame.origin.y, resultsTxtView.frame.size.width, fh+44);
         tableView.hidden       = YES;
         emailBTN.hidden        = YES;
         resultsTxtView.hidden  = NO;
