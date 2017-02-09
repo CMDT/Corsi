@@ -9,48 +9,108 @@
 //
 
 #import "AppDelegate.h"
+#import "mySingleton.h"
 
 @implementation AppDelegate{
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+
 {
-    //start the main App with a message
-
-    // wait while the user looks at the logos.... and enjoys them...?
-    sleep(2);
-
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Corsi Block Tapping Test"
-                                                        message:@""
-                                                       delegate:self
-                                              cancelButtonTitle:@"Continue"
-                                              otherButtonTitles:nil];
+    mySingleton *singleton = [mySingleton sharedSingleton];
     
-    UILabel *txtField = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, 180, 230)];
+    UIAlertController * alertView =   [UIAlertController
+                                       alertControllerWithTitle:@"Corsi Block Tapping Test App"
+                                       message:@"Read The Instructions First..."
+                                       preferredStyle:UIAlertControllerStyleAlert];
     
-    //[txtField setFont:[UIFont fontWithName:@"Serifa-Roman" size:(16.0f)]];
+    alertView.view.tintColor          = [UIColor blueColor];//Agree button colour
     
-    txtField.numberOfLines = 8;
-    txtField.textColor = [UIColor darkGrayColor];
-    txtField.backgroundColor = [UIColor clearColor];
-    txtField.textAlignment = NSTextAlignmentCenter;
+    NSMutableAttributedString *textMessage = [[NSMutableAttributedString alloc] initWithString:@"To see details on how to use this\nApplication and adjust its settings,\nplease read the notes under the\n'(?)Information' Tab-Bar choice.\n\n* Safety Note *\nTake regular breaks and avoid\n strain. If you develop discomfort\n using this App,you must stop\n using it and seek advice.\n\nThis Application is NOT\n for clinical use.\n\nv1.4.4, Copyright © 9.Feb.2017"];
     
-    txtField.text = @"To see details on how to \nuse this Application\n and adjust its settings, \nplease read the notes in \nthe 'Information' section.\n\nThis Application is NOT \nfor clinical use. v1.4.3 - 7.2.17";
-
-    [alertView setValue:txtField forKeyPath:@"accessoryView"]; //for ios 7 and above
-
-    [alertView show];
-
-    // set all labels to Serifa Font 24
-
-    // UIFont *serifa12 = [UIFont fontWithName:@"Serifa-Roman" size:14];
-
-    // [[UILabel appearance] setFont:serifa12];
-    // [[UIButton appearance] setFont:serifa12];//ignore warning as easiest way to alter all button fonts in one go
-
-       return YES;
+    long lens = [textMessage length];
+    [textMessage addAttribute:NSFontAttributeName
+     //value:[UIFont systemFontOfSize:10.0] //specific system font
+                        value:[UIFont fontWithName:@"Courier" size:(10.5)] //any other font in the system
+     //range:NSMakeRange(24, 11)];//splits string to when font size starts
+                        range:NSMakeRange(0, lens)];//splits string to when font size starts and ends in characters starting at zero
+    [alertView setValue:textMessage forKey:@"attributedMessage"]; //@"attributedTitle"]; //the text field you want font size and style to effect
+    
+    //the line '* safety note *' bigger font
+    [textMessage addAttribute:NSFontAttributeName
+                        value:[UIFont systemFontOfSize:14.0] //specific system font
+     
+     //range:NSMakeRange(24, 11)];//splits string to when font size starts
+                        range:NSMakeRange(138, 15)];//splits string to when font size starts and ends in characters starting at zero
+    [alertView setValue:textMessage forKey:@"attributedMessage"]; //@"attributedTitle"]; //the text field you want font size and style to effect
+    
+    //the line 'v1.0.1, Copyright © 8.Feb 2017' bigger font
+    [textMessage addAttribute:NSFontAttributeName
+                        value:[UIFont systemFontOfSize:14.0] //specific system font
+     
+     //range:NSMakeRange(24, 11)];//splits string to when font size starts
+                        range:NSMakeRange(lens-30, 30)];//splits string to when font size starts and ends in characters starting at zero
+    [alertView setValue:textMessage forKey:@"attributedMessage"]; //@"attributedTitle"]; //the text field you want font size and style to effect
+    
+    
+    //[[UIView appearanceWhenContainedIn:UIAlertController.class, nil] setBackgroundColor:[UIColor yellowColor]];
+    
+    //[[UIView appearanceWhenContainedIn:UIAlertController.class, nil] setTintColor:[UIColor yellowColor]];
+    
+    alertView.view.layer.cornerRadius = 90.0; //sets the fade in of the background colour
+    alertView.view.backgroundColor    = [UIColor yellowColor]; //centre background colour
+    
+    UIAlertAction* ok = [UIAlertAction
+                         actionWithTitle:@"Agree - RUN App"
+                         //style:UIAlertActionStyleDefault // could be 'destructive' or 'cancel'
+                         style:UIAlertActionStyleDefault
+                         handler:^(UIAlertAction * action)
+                         {
+                         [alertView dismissViewControllerAnimated:YES completion:nil];
+                         //NSLog(@"ok");
+                         //continue to App run
+                         singleton.okGoNow=YES;
+                         }];
+    UIAlertAction* cancel = [UIAlertAction
+                             actionWithTitle:@"Do Not Agree - EXIT App"
+                             style:UIAlertActionStyleDestructive
+                             handler:^(UIAlertAction * action)
+                             {
+                             [alertView dismissViewControllerAnimated:YES completion:nil];
+                             //NSLog(@"canceled the App");
+                             singleton.okGoNow=NO;
+                             //stop App if cancelled
+                             
+                             if (singleton.okGoNow == NO) {
+                                 //NSLog(@"Cancelled");
+                                 //the app has been cancelled by the alert cancel in the accept message in AppDelegate
+                                 //STOP//
+                                 UIApplication *app = [UIApplication sharedApplication];
+                                 [app performSelector:@selector(suspend)];
+                                 
+                                 //wait 2 seconds while app is going background
+                                 [NSThread sleepForTimeInterval:2.0];
+                                 
+                                 //exit app when app is in background
+                                 exit(0);
+                                 //stop
+                             } else {
+                                 //NSLog(@"Running App.");
+                             }
+                             }];
+    
+    [alertView addAction:ok];
+    [alertView addAction:cancel];
+    [self.window addSubview:self.inputViewController.view];
+    [self.window makeKeyAndVisible];
+    
+    [self.window.rootViewController presentViewController:alertView animated:TRUE completion:nil];
+    
+    return YES;
 }
-							
+
+
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -59,7 +119,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 

@@ -34,6 +34,7 @@
     BOOL animals;
     BOOL sounds;
     BOOL dataReady;
+    BOOL okGoNow;
 
     NSString * beepEffect;//from plist
     NSString * oldSubjectName;
@@ -73,6 +74,7 @@
 @property (nonatomic) BOOL      animals;
 @property (nonatomic) BOOL      sounds;
 @property (nonatomic) BOOL      dataReady;
+@property (nonatomic) BOOL      okGoNow;
 
 @property (nonatomic,retain) NSString * beepEffect;
 @property (nonatomic,retain) NSString * oldSubjectName;

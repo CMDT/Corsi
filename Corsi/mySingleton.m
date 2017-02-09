@@ -35,6 +35,7 @@ static mySingleton * sharedSingleton = nil;
     testTime,
     resultStrings,      //string
     resultStringRows,   //array
+    okGoNow, //bool is the apop able to run or should it exit
 
     email,
     forwardTestDirection,
@@ -91,6 +92,7 @@ static mySingleton * sharedSingleton = nil;
         animals              = NO;
         sounds               = YES;
         dataReady            = NO;
+        okGoNow              = NO;
         beepEffect           = @"KLICK";
         segIndex             = 0;
         forwardTestDirection = YES;
