@@ -45,12 +45,13 @@
     float flash2;
     
     //for timing
-    Float32 testReactionTime[10];     //each group
+    Float32 testReactionTime[10];      //each group
     Float32 reactionTime[10][15];      //each test
-    Float32 totalReactionTime;        //total for all tests
-    Float32 shortestReactionTime[10]; //for each group
+    Float32 totalReactionTime;         //total for all tests
+    Float32 shortestReactionTime[10];  //for each group
     Float32 longestReactionTime[10];
     Float32 averageReactionTime[10];
+    Float32 aveTotalReactionTime;
     
     double noOfSeconds;
     
@@ -2305,6 +2306,10 @@
             tempString=[NSString stringWithFormat:@"%.0f", averageReactionTime[aa]];
             [singleton.displayStringRows addObject: tempString];//data
             
+            //??? jah average of all total averages
+            //tempString=[NSString stringWithFormat:@"Average Reaction Time:, %.0f,mS", averageReactionTime[aa]];
+            //[singleton.resultStringRows addObject:tempString];//csv
+            
             //add the first guess on to the totals
             totalReactionTime = fabsf(totalReactionTime + reactionTime[aa][0]);
 
@@ -2333,6 +2338,19 @@
     //blank
     tempString=@"";
     [singleton.resultStringRows addObject:tempString];//csv
+        
+        //all average of all tests time
+        aveTotalReactionTime=fabs(totalReactionTime/(totcor+totwro));
+        tempString=@"Tests Average Reaction Time";
+        [singleton.displayStringTitles addObject:tempString ];//title
+        tempString=[NSString stringWithFormat:@"%.0f", aveTotalReactionTime];
+        [singleton.displayStringRows addObject: tempString];//data
+        
+        tempString=[NSString stringWithFormat:@"Tests Average Reaction Time:, %.0f,mS", aveTotalReactionTime];
+        [singleton.resultStringRows addObject:tempString];//csv
+        //blank
+        tempString=@"";
+        [singleton.resultStringRows addObject:tempString];//csv
 
     //put final totals
     //line
@@ -2371,7 +2389,7 @@
     [singleton.displayStringRows addObject: @""];//data
 
     //line
-    tempString=@"(c) MMU 2017 MMU";
+    tempString=@"(c) MMU 2019 MMU";
     [singleton.displayStringTitles addObject:tempString ]; //title
     [singleton.resultStringRows addObject:tempString]; //csv
     [singleton.displayStringRows addObject:@""]; //data
