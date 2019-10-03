@@ -645,28 +645,28 @@
  
                      animations:^{
                          
-                         CGAffineTransform scaleTrans = CGAffineTransformMakeScale(scaleFactor, scaleFactor);
+        CGAffineTransform scaleTrans = CGAffineTransformMakeScale(self->scaleFactor, self->scaleFactor);
 
-                         CGAffineTransform rotateTrans1 = CGAffineTransformMakeRotation(angle[1] * M_PI / 180);
-                         CGAffineTransform rotateTrans2 = CGAffineTransformMakeRotation(angle[2] * M_PI / 180);
-                         CGAffineTransform rotateTrans3 = CGAffineTransformMakeRotation(angle[3] * M_PI / 180);
-                         CGAffineTransform rotateTrans4 = CGAffineTransformMakeRotation(angle[4] * M_PI / 180);
-                         CGAffineTransform rotateTrans5 = CGAffineTransformMakeRotation(angle[5] * M_PI / 180);
-                         CGAffineTransform rotateTrans6 = CGAffineTransformMakeRotation(angle[6] * M_PI / 180);
-                         CGAffineTransform rotateTrans7 = CGAffineTransformMakeRotation(angle[7] * M_PI / 180);
-                         CGAffineTransform rotateTrans8 = CGAffineTransformMakeRotation(angle[8] * M_PI / 180);
-                         CGAffineTransform rotateTrans9 = CGAffineTransformMakeRotation(angle[9] * M_PI / 180);
+                        CGAffineTransform rotateTrans1 = CGAffineTransformMakeRotation(self->angle[1] * M_PI / 180);
+                        CGAffineTransform rotateTrans2 = CGAffineTransformMakeRotation(self->angle[2] * M_PI / 180);
+                        CGAffineTransform rotateTrans3 = CGAffineTransformMakeRotation(self->angle[3] * M_PI / 180);
+                        CGAffineTransform rotateTrans4 = CGAffineTransformMakeRotation(self->angle[4] * M_PI / 180);
+                        CGAffineTransform rotateTrans5 = CGAffineTransformMakeRotation(self->angle[5] * M_PI / 180);
+                        CGAffineTransform rotateTrans6 = CGAffineTransformMakeRotation(self->angle[6] * M_PI / 180);
+                        CGAffineTransform rotateTrans7 = CGAffineTransformMakeRotation(self->angle[7] * M_PI / 180);
+                        CGAffineTransform rotateTrans8 = CGAffineTransformMakeRotation(self->angle[8] * M_PI / 180);
+                        CGAffineTransform rotateTrans9 = CGAffineTransformMakeRotation(self->angle[9] * M_PI / 180);
                          
                       
-                         box1image.transform = CGAffineTransformConcat(scaleTrans, rotateTrans1);
-                         box2image.transform = CGAffineTransformConcat(scaleTrans, rotateTrans2);
-                         box3image.transform = CGAffineTransformConcat(scaleTrans, rotateTrans3);
-                         box4image.transform = CGAffineTransformConcat(scaleTrans, rotateTrans4);
-                         box5image.transform = CGAffineTransformConcat(scaleTrans, rotateTrans5);
-                         box6image.transform = CGAffineTransformConcat(scaleTrans, rotateTrans6);
-                         box7image.transform = CGAffineTransformConcat(scaleTrans, rotateTrans7);
-                         box8image.transform = CGAffineTransformConcat(scaleTrans, rotateTrans8);
-                         box9image.transform = CGAffineTransformConcat(scaleTrans, rotateTrans9);
+                        self.box1image.transform = CGAffineTransformConcat(scaleTrans, rotateTrans1);
+                        self.box2image.transform = CGAffineTransformConcat(scaleTrans, rotateTrans2);
+                        self.box3image.transform = CGAffineTransformConcat(scaleTrans, rotateTrans3);
+                        self.box4image.transform = CGAffineTransformConcat(scaleTrans, rotateTrans4);
+                        self.box5image.transform = CGAffineTransformConcat(scaleTrans, rotateTrans5);
+                        self.box6image.transform = CGAffineTransformConcat(scaleTrans, rotateTrans6);
+                        self.box7image.transform = CGAffineTransformConcat(scaleTrans, rotateTrans7);
+                        self.box8image.transform = CGAffineTransformConcat(scaleTrans, rotateTrans8);
+                        self.box9image.transform = CGAffineTransformConcat(scaleTrans, rotateTrans9);
                          
                      }completion:nil];
     }
@@ -1517,7 +1517,7 @@
               delay:0  /* do not add a delay because we will use performSelector. */
             options:UIViewAnimationOptionCurveEaseInOut
          animations:^ {
-        MessageView.alpha = 1.0; //fade in
+        self->MessageView.alpha = 1.0; //fade in
                       }
         completion:^(BOOL finished) {[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(animateMessageViewOUT) userInfo:nil repeats:NO];
                       }];
@@ -1534,7 +1534,7 @@
                           delay:0  /* do not add a delay because we will use performSelector. */
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^ {
-                         MessageView.alpha = 1.0; //fade in
+        self->MessageView.alpha = 1.0; //fade in
                      }
                      completion:^(BOOL finished) {[NSTimer scheduledTimerWithTimeInterval:dur target:self selector:@selector(animateMessageViewOUT) userInfo:nil repeats:NO];
                      }];
@@ -1554,7 +1554,7 @@
                          }else{
                              MessageView.alpha = 0.0;
                          }*/
-                         MessageView.alpha = 0.0; //fade out
+        self->MessageView.alpha = 0.0; //fade out
                      }
                      completion:^(BOOL finished) {
                      }];
@@ -1575,7 +1575,7 @@
                           }else{
                           MessageView.alpha = 0.0;
                           }*/
-                         MessageView.alpha = 0.0; //fade out
+        self->MessageView.alpha = 0.0; //fade out
                      }
                      completion:^(BOOL finished) {
                      }];

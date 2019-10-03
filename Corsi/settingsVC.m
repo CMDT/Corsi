@@ -815,25 +815,25 @@ UIAlertAction * cancelButtonTitle = [UIAlertAction
 
           CGAffineTransform scaleTrans = CGAffineTransformMakeScale(scaleFactor, scaleFactor);
 
-          CGAffineTransform rotateTrans1 = CGAffineTransformMakeRotation(angle[1] * M_PI / 180);
-          CGAffineTransform rotateTrans2 = CGAffineTransformMakeRotation(angle[2] * M_PI / 180);
-          CGAffineTransform rotateTrans3 = CGAffineTransformMakeRotation(angle[3] * M_PI / 180);
-          CGAffineTransform rotateTrans4 = CGAffineTransformMakeRotation(angle[4] * M_PI / 180);
-          CGAffineTransform rotateTrans5 = CGAffineTransformMakeRotation(angle[5] * M_PI / 180);
-          CGAffineTransform rotateTrans6 = CGAffineTransformMakeRotation(angle[6] * M_PI / 180);
-          CGAffineTransform rotateTrans7 = CGAffineTransformMakeRotation(angle[7] * M_PI / 180);
-          CGAffineTransform rotateTrans8 = CGAffineTransformMakeRotation(angle[8] * M_PI / 180);
-          CGAffineTransform rotateTrans9 = CGAffineTransformMakeRotation(angle[9] * M_PI / 180);
+          CGAffineTransform rotateTrans1 = CGAffineTransformMakeRotation(self->angle[1] * M_PI / 180);
+          CGAffineTransform rotateTrans2 = CGAffineTransformMakeRotation(self->angle[2] * M_PI / 180);
+          CGAffineTransform rotateTrans3 = CGAffineTransformMakeRotation(self->angle[3] * M_PI / 180);
+          CGAffineTransform rotateTrans4 = CGAffineTransformMakeRotation(self->angle[4] * M_PI / 180);
+          CGAffineTransform rotateTrans5 = CGAffineTransformMakeRotation(self->angle[5] * M_PI / 180);
+          CGAffineTransform rotateTrans6 = CGAffineTransformMakeRotation(self->angle[6] * M_PI / 180);
+          CGAffineTransform rotateTrans7 = CGAffineTransformMakeRotation(self->angle[7] * M_PI / 180);
+          CGAffineTransform rotateTrans8 = CGAffineTransformMakeRotation(self->angle[8] * M_PI / 180);
+          CGAffineTransform rotateTrans9 = CGAffineTransformMakeRotation(self->angle[9] * M_PI / 180);
 
-          block1View.transform = CGAffineTransformConcat(scaleTrans, rotateTrans1);
-          block2View.transform = CGAffineTransformConcat(scaleTrans, rotateTrans2);
-          block3View.transform = CGAffineTransformConcat(scaleTrans, rotateTrans3);
-          block4View.transform = CGAffineTransformConcat(scaleTrans, rotateTrans4);
-          block5View.transform = CGAffineTransformConcat(scaleTrans, rotateTrans5);
-          block6View.transform = CGAffineTransformConcat(scaleTrans, rotateTrans6);
-          block7View.transform = CGAffineTransformConcat(scaleTrans, rotateTrans7);
-          block8View.transform = CGAffineTransformConcat(scaleTrans, rotateTrans8);
-          block9View.transform = CGAffineTransformConcat(scaleTrans, rotateTrans9);
+          self.block1View.transform = CGAffineTransformConcat(scaleTrans, rotateTrans1);
+          self.block2View.transform = CGAffineTransformConcat(scaleTrans, rotateTrans2);
+          self.block3View.transform = CGAffineTransformConcat(scaleTrans, rotateTrans3);
+          self.block4View.transform = CGAffineTransformConcat(scaleTrans, rotateTrans4);
+          self.block5View.transform = CGAffineTransformConcat(scaleTrans, rotateTrans5);
+          self.block6View.transform = CGAffineTransformConcat(scaleTrans, rotateTrans6);
+          self.block7View.transform = CGAffineTransformConcat(scaleTrans, rotateTrans7);
+          self.block8View.transform = CGAffineTransformConcat(scaleTrans, rotateTrans8);
+          self.block9View.transform = CGAffineTransformConcat(scaleTrans, rotateTrans9);
       }completion:nil];
 }
 

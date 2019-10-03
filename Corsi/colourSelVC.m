@@ -170,7 +170,8 @@ images, imageNames;
     label.text              = [NSString stringWithFormat:@"%@", colourArrayBack[row]];
 
     //return label;
-        return [images objectAtIndex:row],label;
+    //return [images objectAtIndex:row],label; //warning of possible use of comma being an issue.  silenced with cast (void)
+    return (void)([images objectAtIndex:row]),label;
     //
     //
 }
