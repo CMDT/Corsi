@@ -259,8 +259,8 @@
 //*************************************************************
 //version, set anyway *****************************************
 //*************************************************************
-        version0 =  @"v1.4.6 - 5.5.18";           // version   *** keep short
-        version1 =  @"MMU (c) 2017";               // copyright *** limited line space
+        version0 =  @"v1.4.7 - 27.1.2020";         // version   *** keep short
+        version1 =  @"MMU (c) 2020";               // copyright *** limited line space
         version2 =  @"j.a.howell@mmu.ac.uk";       // author    *** to display on device
         version3 =  @"http://www.ess.mmu.ac.uk";   // web site  *** settings screen
 //*************************************************************************************** check web site address as not working at present

@@ -712,6 +712,7 @@
 				INFOPLIST_FILE = "Corsi/Corsi-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LIBRARY_SEARCH_PATHS = "";
+				MARKETING_VERSION = "1.4.7 - 27.1.20";
 				PRODUCT_BUNDLE_IDENTIFIER = "uk.ac.mmu.ess.www.jah.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -737,6 +738,7 @@
 				INFOPLIST_FILE = "Corsi/Corsi-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LIBRARY_SEARCH_PATHS = "";
+				MARKETING_VERSION = "1.4.7 - 27.1.20";
 				PRODUCT_BUNDLE_IDENTIFIER = "uk.ac.mmu.ess.www.jah.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
