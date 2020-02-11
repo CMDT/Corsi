@@ -2389,7 +2389,7 @@
     [singleton.displayStringRows addObject: @""];//data
 
     //line
-    tempString=@"(c) MMU 2019 MMU";
+    tempString=@"(c) MMU 2020 MMU";
     [singleton.displayStringTitles addObject:tempString ]; //title
     [singleton.resultStringRows addObject:tempString]; //csv
     [singleton.displayStringRows addObject:@""]; //data

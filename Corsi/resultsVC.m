@@ -350,7 +350,7 @@ forRowAtIndexPath: (NSIndexPath*)indexPath
     NSString *emailTitle = [NSString stringWithFormat:@"Corsi App Data: %@",singleton.oldSubjectName];
     NSString *messageBody = [NSString stringWithFormat:@"The test data for the subject:%@ taken at the date: %@ and time: %@, is attached as a text/csv file.\n\nThe file format is comma separated variable with a csv extension.\n\nThe data can be read by MS-Excel, then analysed by your own functions.\n\nSent by the Corsi App.",singleton.oldSubjectName, singleton.testDate, singleton.testTime];
     
-    //NSArray  *toRecipents = [NSArray arrayWithObject:@"j.a.howell@mmu.ac.uk"];//testing only
+    //NSArray  *toRecipents = [NSArray arrayWithObject:@"s.maudsley-barton@mmu.ac.uk"]; //testing only
     NSArray  *toRecipents = [NSArray arrayWithObject:singleton.email];
     
     MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];

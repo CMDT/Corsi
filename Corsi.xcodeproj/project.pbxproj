@@ -404,7 +404,7 @@
 				ORGANIZATIONNAME = "Manchester Metropolitan University - ESS - essmobile";
 				TargetAttributes = {
 					E10D016419B6024F00D9E5F8 = {
-						DevelopmentTeam = GC9CZAQ95B;
+						DevelopmentTeam = 4SPW49WK35;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -706,13 +706,13 @@
 				CLANG_STATIC_ANALYZER_MODE_ON_ANALYZE_ACTION = deep;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = GC9CZAQ95B;
+				DEVELOPMENT_TEAM = 4SPW49WK35;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Corsi/Corsi-Prefix.pch";
 				INFOPLIST_FILE = "Corsi/Corsi-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LIBRARY_SEARCH_PATHS = "";
-				MARKETING_VERSION = "1.4.7 - 27.1.20";
+				MARKETING_VERSION = "1.4.7 - 11.02.2020";
 				PRODUCT_BUNDLE_IDENTIFIER = "uk.ac.mmu.ess.www.jah.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -732,13 +732,13 @@
 				CLANG_STATIC_ANALYZER_MODE_ON_ANALYZE_ACTION = deep;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = GC9CZAQ95B;
+				DEVELOPMENT_TEAM = 4SPW49WK35;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Corsi/Corsi-Prefix.pch";
 				INFOPLIST_FILE = "Corsi/Corsi-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LIBRARY_SEARCH_PATHS = "";
-				MARKETING_VERSION = "1.4.7 - 27.1.20";
+				MARKETING_VERSION = "1.4.7 - 11.02.2020";
 				PRODUCT_BUNDLE_IDENTIFIER = "uk.ac.mmu.ess.www.jah.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
